@@ -9,5 +9,6 @@ namespace VotingApp_RESTAPI.Services.Interfaces
         int AddVoter(IVoter voter);
         IVoter GetVoter(int id);
         IEnumerable<IVoter> GetVoters();
+        void Vote(ICandidate candidate, int voterID);
     }
 }

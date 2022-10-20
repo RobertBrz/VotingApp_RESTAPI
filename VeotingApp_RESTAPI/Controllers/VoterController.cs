@@ -16,7 +16,7 @@ namespace VotingApp_RESTAPI.Controllers
         private readonly IVoterService _voterService;
         private readonly ILogger<VoterController> _logger;
 
-        public VoterController(ILogger<VoterController> logger, IVoterService voterService )
+        public VoterController(ILogger<VoterController> logger, IVoterService voterService)
         {
             _voterService = voterService;
             _logger = logger;
@@ -42,13 +42,15 @@ namespace VotingApp_RESTAPI.Controllers
         [Route("Voters/{voterID}")]
         public IActionResult GetVoter([FromRoute] int voterID)
         {
-            return Ok();
+            var result = _voterService.GetVoter(voterID);
+            return Ok(result);
         }
 
         [HttpPost]
         [Route("Vote/{voterID}")]
-        public IActionResult Vote([FromBody] Candidate candidat, [FromRoute] int voterID)
+        public IActionResult Vote([FromBody] Candidate candidate, [FromRoute] int voterID)
         {
+            _voterService.Vote(candidate, voterID);
             return Ok();
         }
     }

@@ -20,5 +20,10 @@ namespace VotingApp_RESTAPI.Services
         {
             return  new List<IVoter>(); 
         }
+
+        public void Vote(ICandidate candidate, int voterID)
+        {
+           
+        }
     }
 }
