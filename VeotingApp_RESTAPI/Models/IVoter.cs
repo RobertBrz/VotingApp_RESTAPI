@@ -1,4 +1,4 @@
-﻿namespace VotingApp_RESTAPI.Model
+﻿namespace VotingApp_RESTAPI.Models
 {
     public interface IVoter
     {

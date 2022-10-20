@@ -1,8 +1,7 @@
-﻿namespace VotingApp_RESTAPI.Model
+﻿namespace VotingApp_RESTAPI.Models
 {
     public interface ICandidate
     {
         public void AddVote();
-       
     }
 }

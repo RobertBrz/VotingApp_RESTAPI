@@ -1,18 +1,24 @@
-﻿using VotingApp_RESTAPI.Model;
+﻿using System.Collections.Generic;
+using VotingApp_RESTAPI.Models;
 using VotingApp_RESTAPI.Services.Interfaces;
 
 namespace VotingApp_RESTAPI.Services
 {
     public class VoterService : IVoterService
     {
-        public int AddVoter()
+        public int AddVoter(IVoter voter)
         {
-            throw new System.NotImplementedException();
+            return 0; 
         }
 
-        public IVoter GetVoter()
+        public IVoter GetVoter(int id)
         {
-            throw new System.NotImplementedException();
+            return null;
+        }
+
+        public IEnumerable<IVoter> GetVoters()
+        {
+            return  new List<IVoter>(); 
         }
     }
 }

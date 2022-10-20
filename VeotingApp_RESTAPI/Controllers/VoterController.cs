@@ -4,7 +4,8 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using VotingApp_RESTAPI.Model;
+using VotingApp_RESTAPI.Models;
+using VotingApp_RESTAPI.Services.Interfaces;
 
 namespace VotingApp_RESTAPI.Controllers
 {
@@ -12,26 +13,41 @@ namespace VotingApp_RESTAPI.Controllers
     [Route("[controller]")]
     public class VoterController : ControllerBase
     {
-
+        private readonly IVoterService _voterService;
         private readonly ILogger<VoterController> _logger;
 
-        public VoterController(ILogger<VoterController> logger)
+        public VoterController(ILogger<VoterController> logger, IVoterService voterService )
         {
+            _voterService = voterService;
             _logger = logger;
         }
 
         [HttpPost]
-        [Route("AddVoter")]
+        [Route("Add")]
         public IActionResult AddVoter([FromBody] Voter voter)
         {
-
+            _voterService.AddVoter(voter);
             return Ok();
         }
 
+        [HttpGet]
+        [Route("Voters")]
+        public IActionResult GetVoters()
+        {
+            _voterService.GetVoters();
+            return Ok();
+        }
 
         [HttpGet]
-        [Route("GetVoter/{name}")]
-        public IActionResult GetVoter(string name)
+        [Route("Voters/{voterID}")]
+        public IActionResult GetVoter([FromRoute] int voterID)
+        {
+            return Ok();
+        }
+
+        [HttpPost]
+        [Route("Vote/{voterID}")]
+        public IActionResult Vote([FromBody] Candidate candidat, [FromRoute] int voterID)
         {
             return Ok();
         }
