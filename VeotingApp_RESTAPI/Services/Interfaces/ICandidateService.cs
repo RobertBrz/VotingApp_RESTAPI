@@ -10,6 +10,6 @@ namespace VotingApp_RESTAPI.Services.Interfaces
     {
         IEnumerable<CandidateDto> GetCandidates();
         CandidateDto GetCandidate(int   id);
-        void AddCandidate(CandidateDto candidate);
+        void AddCandidate(string name  ,long pesel);
     }
 }

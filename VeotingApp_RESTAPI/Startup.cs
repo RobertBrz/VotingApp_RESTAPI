@@ -13,6 +13,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using VotingApp_RESTAPI.DBContexts;
+using VotingApp_RESTAPI.EntitiyFrameworkRepositories;
+using VotingApp_RESTAPI.Models;
+using VotingApp_RESTAPI.ModelsDto;
 using VotingApp_RESTAPI.Services;
 using VotingApp_RESTAPI.Services.Interfaces;
 
@@ -36,6 +39,8 @@ namespace VotingApp_RESTAPI
             services.AddDbContext<ApplicationDbContext>();
             services.AddControllers();
             services.AddScoped<ErrorHandlingMiddleware>();
+            services.AddScoped<VoterRepository<Voter>>();
+            services.AddScoped<CandidateRepository<Candidate>>();
             services.AddSwaggerGen(c =>
             {
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "VeotingApp_RESTAPI", Version = "v1" });
@@ -59,7 +64,7 @@ namespace VotingApp_RESTAPI
 
             app.UseAuthorization();
 
-         
+
 
             app.UseEndpoints(endpoints =>
             {

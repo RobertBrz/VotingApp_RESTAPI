@@ -2,7 +2,6 @@
 {
     public interface IStoringCache
     {
-
         void Notify();
     }
 }

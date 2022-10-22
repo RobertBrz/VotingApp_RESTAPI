@@ -44,9 +44,9 @@ namespace VotingApp_RESTAPI.Controllers
 
         [HttpPost]
         [Route("AddCandidate")]
-        public IActionResult AddCandidate(CandidateDto candidatedto)
+        public IActionResult AddCandidate([FromQuery] string name, long pesel)
         {
-            _candidateService.AddCandidate(candidatedto);
+            _candidateService.AddCandidate(name, pesel);
             return Ok();
         }
     }
