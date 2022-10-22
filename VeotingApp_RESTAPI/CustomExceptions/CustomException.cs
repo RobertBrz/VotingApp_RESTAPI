@@ -5,7 +5,7 @@ using System;
 namespace VotingApp_RESTAPI.CustomExceptions
 {
    
-    public class CustomException :Exception
+    public class CandidateNotFoundException :Exception
     {
     }
 }

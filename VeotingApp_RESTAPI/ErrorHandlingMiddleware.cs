@@ -6,8 +6,8 @@ using VotingApp_RESTAPI.CustomExceptions;
 
 namespace VotingApp_RESTAPI
 {
-    
-    public class ErrorHandlingMiddleware:IMiddleware
+
+    public class ErrorHandlingMiddleware : IMiddleware
     {
         public async Task InvokeAsync(HttpContext context, RequestDelegate next)
         {
@@ -15,15 +15,20 @@ namespace VotingApp_RESTAPI
             {
                 await next.Invoke(context);
             }
-            catch (CustomException ex)
+            catch (CandidateNotFoundException ex)
             {
                 context.Response.StatusCode = 200;
-                await context.Response.WriteAsync("custom exception");
+                await context.Response.WriteAsync("Candidate not exist in database");
+            }
+            catch (NoVoterFoundException ex)
+            {
+                context.Response.StatusCode = 200;
+                await context.Response.WriteAsync("Voter not exist in database");
             }
             catch (Exception ex)
             {
                 context.Response.StatusCode = 400;
-                await context.Response.WriteAsync("Something went wrong");
+                await context.Response.WriteAsync("Not registered error occured");
             }
         }
     }
