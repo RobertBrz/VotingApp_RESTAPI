@@ -41,6 +41,12 @@ namespace VotingApp_RESTAPI.Migrations
                 table: "Candidates",
                 column: "Pesel",
                 unique: true);
+
+            migrationBuilder.CreateIndex(
+                name: "PeselIndex1",
+                table: "Voters",
+                column: "Pesel",
+                unique: true);
         }
 
         protected override void Down(MigrationBuilder migrationBuilder)

@@ -62,6 +62,10 @@ namespace VotingApp_RESTAPI.Migrations
 
                     b.HasKey("Id");
 
+                    b.HasIndex(new[] { "Pesel" }, "PeselIndex")
+                        .IsUnique()
+                        .HasDatabaseName("PeselIndex1");
+
                     b.ToTable("Voters");
                 });
 #pragma warning restore 612, 618

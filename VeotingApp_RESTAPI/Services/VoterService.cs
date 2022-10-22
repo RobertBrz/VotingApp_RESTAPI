@@ -29,9 +29,9 @@ namespace VotingApp_RESTAPI.Services
             _applicationDbContext.SaveChanges();
         }
 
-        public VoterDto GetVoter(long pesel)
+        public VoterDto GetVoter(int id)
         {
-            var voter = _applicationDbContext.Voters.Find(pesel);
+            var voter = _applicationDbContext.Voters.FirstOrDefault(v => v.Id.Equals(id));
             if (voter.Equals(null)) throw new VoterNotFoundException();
             return _mapper.Map<VoterDto>(voter);
         }
@@ -43,13 +43,13 @@ namespace VotingApp_RESTAPI.Services
             return result;
         }
 
-        public void Vote(CandidateDto candidate, long pesel)
+        public void Vote(int candidateid, int id)
         {
-            if (_applicationDbContext.Candidates.Find(candidate.Pesel) == null) throw new CandidateNotFoundException();
-            if (_applicationDbContext.Voters.Find(pesel) == null) throw new VoterNotFoundException();
+            if (_applicationDbContext.Candidates.FirstOrDefault(c => c.Id.Equals(candidateid)).Equals(null)) throw new CandidateNotFoundException();
+            if (_applicationDbContext.Voters.FirstOrDefault(v => v.Id.Equals(id)).Equals(null)) throw new VoterNotFoundException();
 
-            _applicationDbContext.Candidates.Find(candidate.Pesel).AddVote();
-            _applicationDbContext.Voters.Find(pesel).SetAsVoted();
+            _applicationDbContext.Candidates.FirstOrDefault(c => c.Id.Equals(candidateid)).AddVote();
+            _applicationDbContext.Voters.FirstOrDefault(v => v.Id.Equals(id)).SetAsVoted();
 
             _applicationDbContext.SaveChanges();
         }

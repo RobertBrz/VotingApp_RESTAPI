@@ -37,10 +37,9 @@ namespace VotingApp_RESTAPI.Controllers
 
         [HttpGet]
         [Route("{candidateID}")]
-        public IActionResult GetCandidate([FromRoute] long pesel)
+        public IActionResult GetCandidate([FromRoute] int candidateID)
         {
-            _candidateService.GetCandidate(pesel);
-            return Ok();
+            return Ok(_candidateService.GetCandidate(candidateID));
         }
 
         [HttpPost]

@@ -5,6 +5,7 @@ using VotingApp_RESTAPI.Models.Interfaces;
 
 namespace VotingApp_RESTAPI.Models
 {
+    [Index("Pesel", IsUnique = true, Name = "PeselIndex")]
     public class Voter : IVoter
     {
         [Key]

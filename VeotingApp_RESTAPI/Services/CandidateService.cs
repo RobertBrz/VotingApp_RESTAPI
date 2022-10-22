@@ -25,11 +25,8 @@ namespace VotingApp_RESTAPI.Services
 
         public void AddCandidate(CandidateDto candidate)
         {
-           
             _appEntities.Candidates.Add(_mapper.Map<Candidate>(candidate));
             _appEntities.SaveChanges();
-
-           
         }
 
         public IEnumerable<CandidateDto> GetCandidates()
@@ -39,9 +36,9 @@ namespace VotingApp_RESTAPI.Services
             return candidatesDto;
         }
 
-        CandidateDto ICandidateService.GetCandidate(long pesel)
+        CandidateDto ICandidateService.GetCandidate(int id)
         {
-            var candidate = _appEntities.Candidates.Find(pesel);
+            var candidate = _appEntities.Candidates.FirstOrDefault(c => c.Id.Equals(id));
             if (candidate.Equals(null)) throw new CandidateNotFoundException();
             var candidateDto = _mapper.Map<CandidateDto>(candidate);
             return candidateDto;

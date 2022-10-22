@@ -9,7 +9,7 @@ using VotingApp_RESTAPI.DBContexts;
 namespace VotingApp_RESTAPI.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20221022124744_Init")]
+    [Migration("20221022130807_Init")]
     partial class Init
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -63,6 +63,10 @@ namespace VotingApp_RESTAPI.Migrations
                         .HasColumnType("bigint");
 
                     b.HasKey("Id");
+
+                    b.HasIndex(new[] { "Pesel" }, "PeselIndex")
+                        .IsUnique()
+                        .HasDatabaseName("PeselIndex1");
 
                     b.ToTable("Voters");
                 });

@@ -28,7 +28,7 @@ namespace VotingApp_RESTAPI
             catch (Microsoft.EntityFrameworkCore.DbUpdateException)
             {
                 context.Response.StatusCode = 500;
-                await context.Response.WriteAsync("Database Error");
+                await context.Response.WriteAsync("Duplicated Pesel Error");
             }
             catch (Exception)
             {

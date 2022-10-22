@@ -9,7 +9,7 @@ namespace VotingApp_RESTAPI.Services.Interfaces
     public interface ICandidateService
     {
         IEnumerable<CandidateDto> GetCandidates();
-        CandidateDto GetCandidate(long  pesel);
+        CandidateDto GetCandidate(int   id);
         void AddCandidate(CandidateDto candidate);
     }
 }

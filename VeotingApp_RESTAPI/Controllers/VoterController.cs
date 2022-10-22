@@ -42,17 +42,17 @@ namespace VotingApp_RESTAPI.Controllers
         }
 
         [HttpGet]
-        [Route("Voters/{pesel}")]
-        public IActionResult GetVoter([FromRoute] long pesel)
+        [Route("Voters/{voterid}")]
+        public IActionResult GetVoter([FromRoute] int voterid)
         {
-            return Ok(_voterService.GetVoter(pesel));
+            return Ok(_voterService.GetVoter(voterid));
         }
 
         [HttpPost]
-        [Route("Vote/{pesel}")]
-        public IActionResult Vote([FromBody] CandidateDto candidate, [FromRoute] long pesel)
+        [Route("Vote/{voterid}")]
+        public IActionResult Vote([FromQuery] int candidateid, [FromRoute] int voterid)
         {
-            _voterService.Vote(candidate, pesel);
+            _voterService.Vote(candidateid, voterid);
             return Ok();
         }
     }
