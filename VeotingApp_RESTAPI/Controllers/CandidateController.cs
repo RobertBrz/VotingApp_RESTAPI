@@ -12,7 +12,7 @@ using VotingApp_RESTAPI.Services.Interfaces;
 
 namespace VotingApp_RESTAPI.Controllers
 {
-    [Route("api/[controller]")]
+    [Route("api/Candidate")]
     [ApiController]
     public class CandidateController : ControllerBase
     {
@@ -32,21 +32,22 @@ namespace VotingApp_RESTAPI.Controllers
         [HttpGet]
         public IActionResult GetCandidates()
         {
-            var candidates = _candidateService.GetCandidates();
-            return Ok(candidates);
+            return Ok(_candidateService.GetCandidates());
         }
 
         [HttpGet]
         [Route("{candidateID}")]
-        public IActionResult GetCandidate([FromRoute] int candidateID)
+        public IActionResult GetCandidate([FromRoute] long pesel)
         {
+            _candidateService.GetCandidate(pesel);
             return Ok();
         }
 
         [HttpPost]
-        [Route("Add")]
-        public IActionResult AddCandidate(Candidate candidate)
+        [Route("AddCandidate")]
+        public IActionResult AddCandidate(CandidateDto candidatedto)
         {
+            _candidateService.AddCandidate(candidatedto);
             return Ok();
         }
     }

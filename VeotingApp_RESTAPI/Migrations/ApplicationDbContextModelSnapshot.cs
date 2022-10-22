@@ -20,25 +20,35 @@ namespace VotingApp_RESTAPI.Migrations
 
             modelBuilder.Entity("VotingApp_RESTAPI.Models.Candidate", b =>
                 {
-                    b.Property<string>("Pesel")
-                        .HasColumnType("nvarchar(450)");
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
                     b.Property<string>("Name")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<long>("Pesel")
+                        .HasColumnType("bigint");
+
                     b.Property<int>("Votes")
                         .HasColumnType("int");
 
-                    b.HasKey("Pesel");
+                    b.HasKey("Id");
+
+                    b.HasIndex(new[] { "Pesel" }, "PeselIndex")
+                        .IsUnique();
 
                     b.ToTable("Candidates");
                 });
 
             modelBuilder.Entity("VotingApp_RESTAPI.Models.Voter", b =>
                 {
-                    b.Property<string>("Pesel")
-                        .HasColumnType("nvarchar(450)");
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
                     b.Property<bool>("HasVoted")
                         .HasColumnType("bit");
@@ -47,7 +57,10 @@ namespace VotingApp_RESTAPI.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.HasKey("Pesel");
+                    b.Property<long>("Pesel")
+                        .HasColumnType("bigint");
+
+                    b.HasKey("Id");
 
                     b.ToTable("Voters");
                 });

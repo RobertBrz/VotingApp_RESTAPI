@@ -35,6 +35,7 @@ namespace VotingApp_RESTAPI
             services.AddScoped<IVoterService, VoterService>();
             services.AddDbContext<ApplicationDbContext>();
             services.AddControllers();
+            services.AddScoped<ErrorHandlingMiddleware>();
             services.AddSwaggerGen(c =>
             {
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "VeotingApp_RESTAPI", Version = "v1" });
@@ -50,12 +51,15 @@ namespace VotingApp_RESTAPI
                 app.UseSwagger();
                 app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "VeotingApp_RESTAPI v1"));
             }
+            app.UseMiddleware<ErrorHandlingMiddleware>();
 
             app.UseHttpsRedirection();
 
             app.UseRouting();
 
             app.UseAuthorization();
+
+         
 
             app.UseEndpoints(endpoints =>
             {

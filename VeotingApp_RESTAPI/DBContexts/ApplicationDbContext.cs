@@ -1,8 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
-using Microsoft.Extensions.Options;
 using VotingApp_RESTAPI.Models;
-using VotingApp_RESTAPI.Models.Interfaces;
 
 namespace VotingApp_RESTAPI.DBContexts
 {
@@ -22,6 +20,13 @@ namespace VotingApp_RESTAPI.DBContexts
             {
                 optionsBuilder.UseSqlServer(Configuration.GetConnectionString("LocalConnection"));
             }
+
+
+        }
+
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
+            base.OnModelCreating(modelBuilder);
         }
 
         public virtual DbSet<Candidate> Candidates { get; set; }

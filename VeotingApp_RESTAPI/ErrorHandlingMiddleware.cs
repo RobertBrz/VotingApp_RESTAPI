@@ -15,17 +15,22 @@ namespace VotingApp_RESTAPI
             {
                 await next.Invoke(context);
             }
-            catch (CandidateNotFoundException ex)
+            catch (CandidateNotFoundException)
             {
                 context.Response.StatusCode = 200;
                 await context.Response.WriteAsync("Candidate not exist in database");
             }
-            catch (NoVoterFoundException ex)
+            catch (VoterNotFoundException)
             {
                 context.Response.StatusCode = 200;
                 await context.Response.WriteAsync("Voter not exist in database");
             }
-            catch (Exception ex)
+            catch (Microsoft.EntityFrameworkCore.DbUpdateException)
+            {
+                context.Response.StatusCode = 500;
+                await context.Response.WriteAsync("Database Error");
+            }
+            catch (Exception)
             {
                 context.Response.StatusCode = 400;
                 await context.Response.WriteAsync("Not registered error occured");

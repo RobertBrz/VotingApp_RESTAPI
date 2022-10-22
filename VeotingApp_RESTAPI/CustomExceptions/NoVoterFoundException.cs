@@ -2,7 +2,7 @@
 
 namespace VotingApp_RESTAPI.CustomExceptions
 {
-    public class NoVoterFoundException : Exception
+    public class VoterNotFoundException : Exception
     {
     }
 }

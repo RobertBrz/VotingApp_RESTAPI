@@ -9,6 +9,9 @@ namespace VotingApp_RESTAPI.MappingProfiles
         public CandidateMappingProfile()
         {
             CreateMap<Candidate, CandidateDto>();
+            CreateMap<CandidateDto, Candidate>();
+            CreateMap<VoterDto, Voter>();
+            CreateMap<Voter, VoterDto>();
         }
     }
 }

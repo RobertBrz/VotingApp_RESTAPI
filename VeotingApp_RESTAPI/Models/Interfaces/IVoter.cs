@@ -1,9 +1,10 @@
-﻿namespace VotingApp_RESTAPI.Models.Interfaces
+﻿using System.ComponentModel.DataAnnotations;
+
+namespace VotingApp_RESTAPI.Models.Interfaces
 {
     public interface IVoter
     {
         void SetAsVoted(bool voted = true);
-        long GetPesel();
         Voter GetInstance();
     }
 }

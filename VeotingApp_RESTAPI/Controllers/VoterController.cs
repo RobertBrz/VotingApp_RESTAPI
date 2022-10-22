@@ -6,6 +6,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using VotingApp_RESTAPI.DBContexts;
 using VotingApp_RESTAPI.Models;
+using VotingApp_RESTAPI.ModelsDto;
 using VotingApp_RESTAPI.Services.Interfaces;
 
 namespace VotingApp_RESTAPI.Controllers
@@ -27,7 +28,7 @@ namespace VotingApp_RESTAPI.Controllers
 
         [HttpPost]
         [Route("Add")]
-        public IActionResult AddVoter([FromBody] Voter voter)
+        public IActionResult AddVoter([FromBody] VoterDto voter)
         {
             _voterService.AddVoter(voter);
             return Ok();
@@ -37,21 +38,19 @@ namespace VotingApp_RESTAPI.Controllers
         [Route("Voters")]
         public IActionResult GetVoters()
         {
-            _voterService.GetVoters();
-            return Ok();
+            return Ok(_voterService.GetVoters());
         }
 
         [HttpGet]
-        [Route("Voters/{voterID}")]
+        [Route("Voters/{pesel}")]
         public IActionResult GetVoter([FromRoute] long pesel)
         {
-            var result = _voterService.GetVoter(pesel);
-            return Ok(result);
+            return Ok(_voterService.GetVoter(pesel));
         }
 
         [HttpPost]
-        [Route("Vote/{voterID}")]
-        public IActionResult Vote([FromBody] Candidate candidate, [FromRoute] string pesel)
+        [Route("Vote/{pesel}")]
+        public IActionResult Vote([FromBody] CandidateDto candidate, [FromRoute] long pesel)
         {
             _voterService.Vote(candidate, pesel);
             return Ok();
