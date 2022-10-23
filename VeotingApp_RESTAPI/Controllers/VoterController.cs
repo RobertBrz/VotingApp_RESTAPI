@@ -12,7 +12,7 @@ using VotingApp_RESTAPI.Services.Interfaces;
 namespace VotingApp_RESTAPI.Controllers
 {
     [ApiController]
-    [Route("[controller]")]
+    [Route("Voter")]
     public class VoterController : ControllerBase
     {
         private readonly IVoterService _voterService;
