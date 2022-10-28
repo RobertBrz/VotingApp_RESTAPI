@@ -26,7 +26,7 @@ namespace VotingApp_RESTAPI.Tests
             var content = result.Content;
             var data = await content.ReadAsStringAsync();
             var model = JsonConvert.DeserializeObject<List<VoterDto>>(data);
-            Assert.NotNull(model);  
+            Assert.NotNull(model);
         }
     }
 }

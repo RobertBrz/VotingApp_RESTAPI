@@ -6,22 +6,11 @@ namespace VotingApp_RESTAPI.DBContexts
 {
     public class ApplicationDbContext : DbContext
     {
-
         public readonly IConfiguration Configuration;
-        public ApplicationDbContext(IConfiguration configuration) : base()
+
+        public ApplicationDbContext(IConfiguration configuration, DbContextOptions<ApplicationDbContext> options) : base(options)
         {
             Configuration = configuration;
-        }
-
-
-        protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
-        {
-            if (!optionsBuilder.IsConfigured)
-            {
-                optionsBuilder.UseSqlServer(Configuration.GetConnectionString("LocalConnection"));
-            }
-
-
         }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)

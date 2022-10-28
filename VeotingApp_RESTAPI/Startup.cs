@@ -7,6 +7,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
+using Microsoft.Extensions.Options;
 using Microsoft.OpenApi.Models;
 using System;
 using System.Collections.Generic;
@@ -36,11 +37,15 @@ namespace VotingApp_RESTAPI
             services.AddAutoMapper(this.GetType().Assembly);
             services.AddScoped<ICandidateService, CandidateService>();
             services.AddScoped<IVoterService, VoterService>();
-            services.AddDbContext<ApplicationDbContext>();
             services.AddControllers();
             services.AddScoped<ErrorHandlingMiddleware>();
             services.AddScoped<VoterRepository<Voter>>();
             services.AddScoped<CandidateRepository<Candidate>>();
+            services.AddDbContext<ApplicationDbContext>(optionsBuilder =>
+            {
+                optionsBuilder.UseSqlServer(Configuration.GetConnectionString("LocalConnection"));
+            });
+
             services.AddSwaggerGen(c =>
             {
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "VeotingApp_RESTAPI", Version = "v1" });
