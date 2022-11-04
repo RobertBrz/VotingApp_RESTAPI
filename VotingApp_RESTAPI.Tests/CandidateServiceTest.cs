@@ -50,13 +50,13 @@ namespace VotingApp_RESTAPI.Tests
                 .UseSqlServer(
                 _configuration.
                 GetConnectionString("TestConnection"))
+                
             .Options;
 
 
             using (var context = new ApplicationDbContext(_configuration, _options) )
             {
                 var deleted = context.Database.EnsureDeleted();
-                context.Database.Migrate();
                 var created = context.Database.EnsureCreated();
 
                 var candidate1 = new Candidate()

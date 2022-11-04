@@ -35,6 +35,7 @@ namespace VotingApp_RESTAPI
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddAutoMapper(this.GetType().Assembly);
+            services.AddScoped<DbContextMigrations>();
             services.AddScoped<ICandidateService, CandidateService>();
             services.AddScoped<IVoterService, VoterService>();
             services.AddControllers();
@@ -53,8 +54,9 @@ namespace VotingApp_RESTAPI
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
-        public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
+        public void Configure(IApplicationBuilder app, IWebHostEnvironment env, DbContextMigrations dbContextMigrations)
         {
+            dbContextMigrations.RunMigraitonPolicy();
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();

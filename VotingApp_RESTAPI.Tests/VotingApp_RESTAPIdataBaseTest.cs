@@ -9,7 +9,7 @@ namespace VotingApp_RESTAPI.Tests
     public class VotingApp_RESTAPIdataBaseTest
     {
         [Theory]
-        [InlineData("Server=(localdb)\\localdb;Database=VotingAppDatabase;Trusted_Connection=True;")]
+        [InlineData("Server=(localdb)\\localsqlserver;Database=LocalDatabase;Trusted_Connection=True;")]
         public void CheckDatabaseConnection(string connectionString)
         {
             SqlConnection conn = new SqlConnection(connectionString);

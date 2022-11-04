@@ -16,6 +16,7 @@ namespace VotingApp_RESTAPI.DBContexts
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             base.OnModelCreating(modelBuilder);
+          
         }
 
         public virtual DbSet<Candidate> Candidates { get; set; }
