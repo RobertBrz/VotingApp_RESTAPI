@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.3.32922.545
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "VotingApp_RESTAPI", "VotingApp_RESTAPI\VotingApp_RESTAPI.csproj", "{2D7E2828-ED54-4E81-BBAD-C010A2D607BC}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "VotingApp_RESTAPI.Tests", "VotingApp_RESTAPI.Tests\VotingApp_RESTAPI.Tests.csproj", "{BA377BFF-1CC4-40AA-BD4E-B4ADE1FFE71C}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{2D7E2828-ED54-4E81-BBAD-C010A2D607BC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2D7E2828-ED54-4E81-BBAD-C010A2D607BC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2D7E2828-ED54-4E81-BBAD-C010A2D607BC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2D7E2828-ED54-4E81-BBAD-C010A2D607BC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BA377BFF-1CC4-40AA-BD4E-B4ADE1FFE71C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BA377BFF-1CC4-40AA-BD4E-B4ADE1FFE71C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BA377BFF-1CC4-40AA-BD4E-B4ADE1FFE71C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BA377BFF-1CC4-40AA-BD4E-B4ADE1FFE71C}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {9C05B65E-C8E3-4E31-BFF9-76C996C199D8}
+	EndGlobalSection
+EndGlobal

@@ -22,7 +22,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\VeotingApp_RESTAPI\VotingApp_RESTAPI.csproj" />
+    <ProjectReference Include="..\VotingApp_RESTAPI\VotingApp_RESTAPI.csproj" />
   </ItemGroup>
 
 </Project>
