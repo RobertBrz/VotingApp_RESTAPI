@@ -12,7 +12,7 @@ using VotingApp_RESTAPI.Services.Interfaces;
 
 namespace VotingApp_RESTAPI.Controllers
 {
-    [Route("api/Candidate")]
+    [Route("Candidate")]
     [ApiController]
     public class CandidateController : ControllerBase
     {
@@ -30,6 +30,7 @@ namespace VotingApp_RESTAPI.Controllers
         }
 
         [HttpGet]
+        [Route("GetAll")]
         public IActionResult GetCandidates()
         {
             return Ok(_candidateService.GetCandidates());
