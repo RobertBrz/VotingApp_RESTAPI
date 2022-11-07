@@ -2,7 +2,6 @@
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
-using System.Data.Entity;
 using System.Linq;
 using VotingApp_RESTAPI.CustomExceptions;
 using VotingApp_RESTAPI.DBContexts;

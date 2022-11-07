@@ -8,24 +8,24 @@ using Xunit;
 
 namespace VotingApp_RESTAPI.Tests
 {
-    public class VotingApp_RESTAPIdataBaseTest
-    {
-        IConfiguration _configuration;
+    //public class VotingApp_RESTAPIdataBaseTest
+    //{
+    //    IConfiguration _configuration;
 
-        [Fact]
-        public void CheckDatabaseConnection()
-        {
-            var builder = new ConfigurationBuilder()
-                .SetBasePath(Directory.GetCurrentDirectory())
-                .AddJsonFile("appsettings.json");
+    //    [Fact]
+    //    public void CheckDatabaseConnection()
+    //    {
+    //        var builder = new ConfigurationBuilder()
+    //            .SetBasePath(Directory.GetCurrentDirectory())
+    //            .AddJsonFile("appsettings.json");
 
-            _configuration = builder.Build();
+    //        _configuration = builder.Build();
 
-            SqlConnection conn = new SqlConnection(_configuration.GetConnectionString("LocalConnection"));
-            conn.Open();
-            Assert.Equal(ConnectionState.Open, conn.State);
-            conn.Close();
-            Assert.Equal(ConnectionState.Closed, conn.State);
-        }
-    }
+    //        SqlConnection conn = new SqlConnection(_configuration.GetConnectionString("LocalConnection"));
+    //        conn.Open();
+    //        Assert.Equal(ConnectionState.Open, conn.State);
+    //        conn.Close();
+    //        Assert.Equal(ConnectionState.Closed, conn.State);
+    //    }
+    //}
 }

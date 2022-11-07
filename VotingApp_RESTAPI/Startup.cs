@@ -42,9 +42,13 @@ namespace VotingApp_RESTAPI
             services.AddScoped<ErrorHandlingMiddleware>();
             services.AddScoped<VoterRepository<Voter>>();
             services.AddScoped<CandidateRepository<Candidate>>();
+            //services.AddDbContext<ApplicationDbContext>(optionsBuilder =>
+            //{
+            //    optionsBuilder.UseSqlServer(Configuration.GetConnectionString("LocalConnection"));
+            //});
             services.AddDbContext<ApplicationDbContext>(optionsBuilder =>
             {
-                optionsBuilder.UseSqlServer(Configuration.GetConnectionString("LocalConnection"));
+                optionsBuilder.UseNpgsql(Configuration.GetConnectionString("PostgresConnection"));
             });
 
             services.AddSwaggerGen(c =>

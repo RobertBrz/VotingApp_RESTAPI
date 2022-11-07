@@ -16,8 +16,9 @@ namespace VotingApp_RESTAPI.DBContexts
 
         public void RunMigraitonPolicy()
         {
-                var pendingMigrations = _applicationDbContext.Database.GetPendingMigrations();
-                if (pendingMigrations != null && pendingMigrations.Any()) _applicationDbContext.Database.Migrate();
+            var pendingMigrations = _applicationDbContext.Database.GetPendingMigrations();
+            if (pendingMigrations != null && pendingMigrations.Any())
+                _applicationDbContext.Database.Migrate();
         }
     }
 }
