@@ -1,10 +1,11 @@
 ﻿using AutoMapper;
 using System.Collections.Generic;
 using System.Linq;
-using VotingApp.Domain.DBContext;
+using VotingApp.DAL.DBContext;
 using VotingApp.Domain.Models;
+using VotingApp.Shared.RepositoryInterfaces;
 
-namespace VotingApp.Domain.EntityFrameworkRepositories
+namespace VotingApp.DAL.EntityFrameworkRepositories
 {
     public class CandidateRepository<T> : ICandidateRepository<T> where T : Candidate
     {

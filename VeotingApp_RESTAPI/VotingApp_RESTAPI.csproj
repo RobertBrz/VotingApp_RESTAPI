@@ -21,7 +21,8 @@
   <ItemGroup>
     <ProjectReference Include="..\VotingApp.DAL\VotingApp.DAL.csproj" />
     <ProjectReference Include="..\VotingApp.Domain\VotingApp.Domain.csproj" />
-    <ProjectReference Include="..\VotingApp.RestAdapter\VotingApp.RestAdapter.csproj" />
+    <ProjectReference Include="..\VotingApp.Helpers\VotingApp.Shared.csproj" />
+    <ProjectReference Include="..\VotingApp.RestAdapter\VotingApp.Application.csproj" />
   </ItemGroup>
 
 </Project>

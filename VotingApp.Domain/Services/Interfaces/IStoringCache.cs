@@ -1,4 +1,4 @@
-﻿namespace VotingApp.Domain
+﻿namespace VotingApp.Domain.Services.Interfaces
 {
     public interface IStoringCache
     {

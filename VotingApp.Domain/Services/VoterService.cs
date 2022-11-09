@@ -3,12 +3,13 @@ using AutoMapper.Execution;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion.Internal;
 using System.Collections.Generic;
 using System.Linq;
-using VotingApp.Domain.EntityFrameworkRepositories;
 using VotingApp.Domain.Models.Voter;
-using VotingApp.Helpers.CustomExceptions;
-using VotingApp.Helpers.ModelsDto;
+using VotingApp.Domain.Services.Interfaces;
+using VotingApp.Shared.CustomExceptions;
+using VotingApp.Shared.ModelsDto;
+using VotingApp.Shared.RepositoryInterfaces;
 
-namespace VotingApp.Domain
+namespace VotingApp.Domain.Services
 {
     public class VoterService : IVoterService
     {

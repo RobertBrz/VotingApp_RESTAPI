@@ -2,7 +2,7 @@
 using System.Linq;
 using System.Text;
 
-namespace VotingApp.Domain.DBContext
+namespace VotingApp.DAL.DBContext
 {
     public class DbContextMigrations
     {

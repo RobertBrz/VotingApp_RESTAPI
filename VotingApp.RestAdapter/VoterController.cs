@@ -4,10 +4,9 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using VotingApp.Domain;
-using VotingApp.Helpers.ModelsDto;
+using VotingApp.Domain.Services.Interfaces;
 
-namespace VotingApp.RestAdapter
+namespace VotingApp.Application
 {
     [ApiController]
     [Route("Voter")]

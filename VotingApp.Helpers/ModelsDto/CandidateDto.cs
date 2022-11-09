@@ -1,5 +1,4 @@
-﻿
-namespace VotingApp.Helpers.ModelsDto
+﻿namespace VotingApp.Shared.ModelsDto
 {
     public class CandidateDto
     {

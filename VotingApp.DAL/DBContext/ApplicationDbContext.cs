@@ -3,7 +3,7 @@ using Microsoft.Extensions.Configuration;
 using VotingApp.Domain.Models;
 using VotingApp.Domain.Models.Voter;
 
-namespace VotingApp.Domain.DBContext
+namespace VotingApp.DAL.DBContext
 {
     public class ApplicationDbContext : DbContext
     {

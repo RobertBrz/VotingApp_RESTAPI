@@ -5,9 +5,9 @@ using Microsoft.AspNetCore.Routing;
 using Microsoft.Extensions.Logging;
 using System.Collections.Generic;
 using System.Linq;
-using VotingApp.Domain;
+using VotingApp.Domain.Services.Interfaces;
 
-namespace VotingApp.RestAdapter
+namespace VotingApp.Application
 {
     [Route("Candidate")]
     [ApiController]

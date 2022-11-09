@@ -7,7 +7,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using VotingApp.Helpers.ModelsDto;
+using VotingApp.Shared.ModelsDto;
 using Xunit;
 
 namespace VotingApp_RESTAPI.Tests

@@ -1,7 +1,7 @@
 ﻿using AutoMapper;
 using VotingApp.Domain.Models;
 using VotingApp.Domain.Models.Voter;
-using VotingApp.Helpers.ModelsDto;
+using VotingApp.Shared.ModelsDto;
 
 namespace VotingApp.Domain.MappingProfiles
 {

@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace VotingApp.RestAdapter
+namespace VotingApp.Application
 {
     [ApiController]
     [Route("api/New")]
@@ -13,7 +13,7 @@ namespace VotingApp.RestAdapter
     {
 
         [HttpGet]
-        public  IActionResult Get()
+        public IActionResult Get()
         {
             return Ok();
         }

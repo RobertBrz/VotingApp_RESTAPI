@@ -1,13 +1,13 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
-using VotingApp.Helpers.ModelsDto;
+using VotingApp.Shared.ModelsDto;
 
-namespace VotingApp.Domain
+namespace VotingApp.Domain.Services.Interfaces
 {
     public interface ICandidateService
     {
         IEnumerable<CandidateDto> GetCandidates();
-        CandidateDto GetCandidate(int   id);
-        void AddCandidate(string name  ,long pesel);
+        CandidateDto GetCandidate(int id);
+        void AddCandidate(string name, long pesel);
     }
 }

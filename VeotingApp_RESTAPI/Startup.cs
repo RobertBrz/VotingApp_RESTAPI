@@ -14,12 +14,14 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
 using System.Threading.Tasks;
-using VotingApp.Domain;
-using VotingApp.Domain.DBContext;
-using VotingApp.Domain.EntityFrameworkRepositories;
+using VotingApp.DAL.DBContext;
+using VotingApp.DAL.EntityFrameworkRepositories;
 using VotingApp.Domain.MappingProfiles;
 using VotingApp.Domain.Models;
 using VotingApp.Domain.Models.Voter;
+using VotingApp.Domain.Services;
+using VotingApp.Domain.Services.Interfaces;
+using VotingApp.Shared.RepositoryInterfaces;
 
 namespace VotingApp_RESTAPI
 {

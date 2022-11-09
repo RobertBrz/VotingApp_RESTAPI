@@ -2,7 +2,7 @@
 using System;
 using System.Linq;
 
-namespace VotingApp.Domain.EntityFrameworkRepositories
+namespace VotingApp.Shared.RepositoryInterfaces
 {
     public interface IRepository<T> where T : class
     {

@@ -1,7 +1,6 @@
-﻿
-using VotingApp.Helpers.ModelsDto;
+﻿using VotingApp.Shared.ModelsDto;
 
-namespace VotingApp.Domain
+namespace VotingApp.Domain.Services.Interfaces
 {
     public interface IVoterService
     {

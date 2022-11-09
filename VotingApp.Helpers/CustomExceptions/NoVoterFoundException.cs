@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace VotingApp.Helpers.CustomExceptions
+namespace VotingApp.Shared.CustomExceptions
 {
     public class VoterNotFoundException : Exception
     {
