@@ -3,8 +3,8 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using VotingApp.DAL.DBContexts;
+using VotingApp.Domain.Models;
 using VotingApp.Helpers.CustomExceptions;
-using VotingApp.Helpers.Models;
 
 namespace VotingApp.DAL.EntitiyFrameworkRepositories
 {

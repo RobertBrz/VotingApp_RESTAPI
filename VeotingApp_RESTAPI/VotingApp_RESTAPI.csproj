@@ -19,6 +19,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\VotingApp.DAL\VotingApp.DAL.csproj" />
     <ProjectReference Include="..\VotingApp.RestAdapter\VotingApp.RestAdapter.csproj" />
   </ItemGroup>
 

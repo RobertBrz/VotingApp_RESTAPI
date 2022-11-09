@@ -10,7 +10,7 @@ using System.Runtime.ConstrainedExecution;
 using System.Text;
 using System.Threading.Tasks;
 using VotingApp.DAL.DBContexts;
-using VotingApp.Helpers.Models;
+using VotingApp.Domain.Models;
 using VotingApp.Helpers.ModelsDto;
 using Xunit;
 using Xunit.Sdk;

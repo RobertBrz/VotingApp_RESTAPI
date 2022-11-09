@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using VotingApp.DAL.DBContexts;
-using VotingApp.Helpers.Models;
+using VotingApp.Domain.Models;
 
 namespace VotingApp.DAL.EntitiyFrameworkRepositories
 {

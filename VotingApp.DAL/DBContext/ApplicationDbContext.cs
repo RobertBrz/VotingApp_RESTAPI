@@ -1,6 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
-using VotingApp.Helpers.Models;
+using VotingApp.Domain.Models;
 
 namespace VotingApp.DAL.DBContexts
 {

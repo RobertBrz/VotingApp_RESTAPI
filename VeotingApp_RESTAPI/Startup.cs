@@ -16,7 +16,7 @@ using System.Threading.Tasks;
 using VotingApp.DAL.DBContexts;
 using VotingApp.DAL.EntitiyFrameworkRepositories;
 using VotingApp.Domain;
-using VotingApp.Helpers.Models;
+using VotingApp.Domain.Models;
 
 namespace VotingApp_RESTAPI
 {

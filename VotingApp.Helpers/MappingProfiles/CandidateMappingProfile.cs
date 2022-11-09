@@ -1,5 +1,4 @@
 ﻿using AutoMapper;
-using VotingApp.Helpers.Models;
 using VotingApp.Helpers.ModelsDto;
 
 namespace VotingApp.Helpers.MappingProfiles

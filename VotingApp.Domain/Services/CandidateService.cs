@@ -2,9 +2,8 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Security.Authentication.ExtendedProtection;
-using VotingApp.DAL.EntitiyFrameworkRepositories;
+using VotingApp.Domain.Models;
 using VotingApp.Helpers.CustomExceptions;
-using VotingApp.Helpers.Models;
 using VotingApp.Helpers.ModelsDto;
 
 namespace VotingApp.Domain

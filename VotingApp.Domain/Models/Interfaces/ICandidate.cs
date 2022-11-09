@@ -1,5 +1,4 @@
-﻿
-namespace VotingApp.Helpers.Models.Interfaces
+﻿namespace VotingApp.Domain.Models.Interfaces
 {
     public interface ICandidate
     {
