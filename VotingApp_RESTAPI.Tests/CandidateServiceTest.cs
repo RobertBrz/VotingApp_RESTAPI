@@ -9,10 +9,9 @@ using System.Linq;
 using System.Runtime.ConstrainedExecution;
 using System.Text;
 using System.Threading.Tasks;
-using VotingApp_RESTAPI.DBContexts;
-using VotingApp_RESTAPI.Models;
-using VotingApp_RESTAPI.Models.Interfaces;
-using VotingApp_RESTAPI.ModelsDto;
+using VotingApp.DAL.DBContexts;
+using VotingApp.Helpers.Models;
+using VotingApp.Helpers.ModelsDto;
 using Xunit;
 using Xunit.Sdk;
 

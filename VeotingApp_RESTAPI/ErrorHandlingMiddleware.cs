@@ -2,7 +2,7 @@
 using Microsoft.AspNetCore.Mvc;
 using System.Threading.Tasks;
 using System;
-using VotingApp_RESTAPI.CustomExceptions;
+using VotingApp.Helpers.CustomExceptions;
 
 namespace VotingApp_RESTAPI
 {

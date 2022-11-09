@@ -13,12 +13,10 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using VotingApp_RESTAPI.DBContexts;
-using VotingApp_RESTAPI.EntitiyFrameworkRepositories;
-using VotingApp_RESTAPI.Models;
-using VotingApp_RESTAPI.ModelsDto;
-using VotingApp_RESTAPI.Services;
-using VotingApp_RESTAPI.Services.Interfaces;
+using VotingApp.DAL.DBContexts;
+using VotingApp.DAL.EntitiyFrameworkRepositories;
+using VotingApp.Domain;
+using VotingApp.Helpers.Models;
 
 namespace VotingApp_RESTAPI
 {
@@ -56,7 +54,7 @@ namespace VotingApp_RESTAPI
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env, DbContextMigrations dbContextMigrations)
         {
-            dbContextMigrations.RunMigraitonPolicy();
+            //dbContextMigrations.RunMigraitonPolicy();
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();
