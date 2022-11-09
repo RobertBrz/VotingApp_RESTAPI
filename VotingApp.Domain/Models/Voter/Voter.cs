@@ -1,9 +1,9 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using System.ComponentModel.DataAnnotations;
 using System.Security;
-using VotingApp.Helpers.MappingProfiles.Interfaces;
+using VotingApp.Domain.Models.Interfaces;
 
-namespace VotingApp.Domain.Models
+namespace VotingApp.Domain.Models.Voter
 {
     [Index("Pesel", IsUnique = true, Name = "PeselIndex")]
     public class Voter : IVoter

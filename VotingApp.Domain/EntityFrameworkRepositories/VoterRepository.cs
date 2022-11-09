@@ -2,12 +2,12 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using VotingApp.DAL.DBContexts;
+using VotingApp.Domain.DBContext;
 using VotingApp.Domain.Models;
+using VotingApp.Domain.Models.Voter;
 using VotingApp.Helpers.CustomExceptions;
-using VotingApp.Helpers.Repositories;
 
-namespace VotingApp.DAL.EntitiyFrameworkRepositories
+namespace VotingApp.Domain.EntityFrameworkRepositories
 {
     public class VoterRepository<T> : IVoterRepository<T> where T : Voter
     {

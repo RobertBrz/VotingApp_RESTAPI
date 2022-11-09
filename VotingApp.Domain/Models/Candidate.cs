@@ -1,7 +1,7 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using System;
 using System.ComponentModel.DataAnnotations;
-using VotingApp.Helpers.MappingProfiles.Interfaces;
+using VotingApp.Domain.Models.Interfaces;
 
 namespace VotingApp.Domain.Models
 {

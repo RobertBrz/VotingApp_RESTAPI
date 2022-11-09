@@ -1,21 +1,19 @@
 ﻿using System.ComponentModel.DataAnnotations;
+using VotingApp.Domain.Models.Voter;
 
-namespace VotingApp.Helpers.MappingProfiles.Interfaces
+namespace VotingApp.Domain.Models.Interfaces
 {
-    public interface ICandidate
+    public interface IVoter
     {
         [Key]
         public int Id { get; set; }
         [Required]
         public long Pesel { get; set; }
-
         [Required]
         public string Name { get; set; }
+        public bool HasVoted { get; set; }
 
-        public int Votes { get; set; }
-
-        void AddVote();
-        long GetPesel();
-        ICandidate GetInstance();
+        void SetAsVoted(bool voted = true);
+        IVoter GetInstance();
     }
 }

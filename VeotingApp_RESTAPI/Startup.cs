@@ -12,11 +12,14 @@ using Microsoft.OpenApi.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Reflection;
 using System.Threading.Tasks;
 using VotingApp.Domain;
+using VotingApp.Domain.DBContext;
+using VotingApp.Domain.EntityFrameworkRepositories;
+using VotingApp.Domain.MappingProfiles;
 using VotingApp.Domain.Models;
-using VotingApp.Helpers.MappingProfiles.Interfaces;
-using VotingApp.Helpers.Repositories;
+using VotingApp.Domain.Models.Voter;
 
 namespace VotingApp_RESTAPI
 {
@@ -32,14 +35,14 @@ namespace VotingApp_RESTAPI
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddAutoMapper(this.GetType().Assembly);
+            services.AddAutoMapper(typeof(CandidateMappingProfile).GetTypeInfo().Assembly);
             services.AddScoped<DbContextMigrations>();
-            services.AddTransient< VoterRepository<Voter>>();
-            services.AddScoped<CandidateRepository<Candidate>>();
+            services.AddTransient<IVoterRepository<Voter>, VoterRepository<Voter>>();
+            services.AddTransient<ICandidateRepository<Candidate>, CandidateRepository<Candidate>>();
             services.AddTransient<ICandidateService, CandidateService>();
             services.AddTransient<IVoterService, VoterService>();
-            services.AddControllers();
             services.AddScoped<ErrorHandlingMiddleware>();
+            services.AddControllers();
 
             services.AddDbContext<ApplicationDbContext>(optionsBuilder =>
             {
@@ -53,9 +56,9 @@ namespace VotingApp_RESTAPI
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
-        public void Configure(IApplicationBuilder app, IWebHostEnvironment env/*, DbContextMigrations dbContextMigrations*/)
+        public void Configure(IApplicationBuilder app, IWebHostEnvironment env, DbContextMigrations dbContextMigrations)
         {
-            //dbContextMigrations.RunMigraitonPolicy();
+            dbContextMigrations.RunMigraitonPolicy();
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();

@@ -1,8 +1,9 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using VotingApp.Domain.Models;
+using VotingApp.Domain.Models.Voter;
 
-namespace VotingApp.DAL.DBContexts
+namespace VotingApp.Domain.DBContext
 {
     public class ApplicationDbContext : DbContext
     {
@@ -16,7 +17,7 @@ namespace VotingApp.DAL.DBContexts
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             base.OnModelCreating(modelBuilder);
-          
+
         }
 
         public virtual DbSet<Candidate> Candidates { get; set; }

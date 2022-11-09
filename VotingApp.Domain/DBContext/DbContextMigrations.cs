@@ -2,7 +2,7 @@
 using System.Linq;
 using System.Text;
 
-namespace VotingApp.DAL.DBContexts
+namespace VotingApp.Domain.DBContext
 {
     public class DbContextMigrations
     {
@@ -16,7 +16,7 @@ namespace VotingApp.DAL.DBContexts
 
         public void RunMigraitonPolicy()
         {
-            //var pendingMigrations = _applicationDbContext.Database.  GetPendingMigrations();
+            //var pendingMigrations = _applicationDbContext.Database.GetPendingMigrations();
             //if (pendingMigrations != null && pendingMigrations.Any()) _applicationDbContext.Database.Migrate();
         }
     }

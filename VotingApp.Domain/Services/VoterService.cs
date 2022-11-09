@@ -3,10 +3,10 @@ using AutoMapper.Execution;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion.Internal;
 using System.Collections.Generic;
 using System.Linq;
-using VotingApp.Domain.Models;
+using VotingApp.Domain.EntityFrameworkRepositories;
+using VotingApp.Domain.Models.Voter;
 using VotingApp.Helpers.CustomExceptions;
 using VotingApp.Helpers.ModelsDto;
-using VotingApp.Helpers.Repositories;
 
 namespace VotingApp.Domain
 {
@@ -36,9 +36,10 @@ namespace VotingApp.Domain
             return _mapper.Map<VoterDto>(voter);
         }
 
-        public void AddVoter(VoterDto voterdto)
+        public void AddVoter(string name, long pesel)
         {
-            _voterRepository.AddSingle(_mapper.Map<Voter>(voterdto));
+            var voterDto = new VoterDto(name, pesel);
+            _voterRepository.AddSingle(_mapper.Map<Voter>(voterDto));
         }
 
         public void Vote(int candidateid, int id)

@@ -26,9 +26,9 @@ namespace VotingApp.RestAdapter
 
         [HttpPost]
         [Route("Add")]
-        public IActionResult AddVoter([FromBody] VoterDto voter)
+        public IActionResult AddVoter([FromQuery] string name, long pesel)
         {
-            _voterService.AddVoter(voter);
+            _voterService.AddVoter(name, pesel);
             return Ok();
         }
 

@@ -2,10 +2,10 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Security.Authentication.ExtendedProtection;
+using VotingApp.Domain.EntityFrameworkRepositories;
 using VotingApp.Domain.Models;
 using VotingApp.Helpers.CustomExceptions;
 using VotingApp.Helpers.ModelsDto;
-using VotingApp.Helpers.Repositories;
 
 namespace VotingApp.Domain
 {
@@ -26,7 +26,7 @@ namespace VotingApp.Domain
 
         public void AddCandidate(string name, long pesel)
         {
-            CandidateDto candidateDto = new CandidateDto(name, pesel);
+            var candidateDto = new CandidateDto(name, pesel);
             var candidate = _mapper.Map<Candidate>(candidateDto);
             _candidateRepository.AddSingle(candidate);
         }

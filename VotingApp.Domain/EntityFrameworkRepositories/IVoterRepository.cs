@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace VotingApp.Helpers.Repositories
+namespace VotingApp.Domain.EntityFrameworkRepositories
 {
     public interface IVoterRepository<T> : IRepository<T> where T : class
     {
