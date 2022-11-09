@@ -6,16 +6,17 @@ using System.Linq;
 using VotingApp.Domain.Models;
 using VotingApp.Helpers.CustomExceptions;
 using VotingApp.Helpers.ModelsDto;
+using VotingApp.Helpers.Repositories;
 
 namespace VotingApp.Domain
 {
     public class VoterService : IVoterService
     {
         IMapper _mapper;
-        VoterRepository<Voter> _voterRepository;
+        IVoterRepository<Voter> _voterRepository;
 
         public VoterService(IMapper mapper,
-            VoterRepository<Voter> voterRepository)
+            IVoterRepository<Voter> voterRepository)
         {
             _mapper = mapper;
             _voterRepository = voterRepository;

@@ -13,10 +13,10 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using VotingApp.DAL.DBContexts;
-using VotingApp.DAL.EntitiyFrameworkRepositories;
 using VotingApp.Domain;
 using VotingApp.Domain.Models;
+using VotingApp.Helpers.MappingProfiles.Interfaces;
+using VotingApp.Helpers.Repositories;
 
 namespace VotingApp_RESTAPI
 {
@@ -34,12 +34,13 @@ namespace VotingApp_RESTAPI
         {
             services.AddAutoMapper(this.GetType().Assembly);
             services.AddScoped<DbContextMigrations>();
-            services.AddScoped<ICandidateService, CandidateService>();
-            services.AddScoped<IVoterService, VoterService>();
+            services.AddTransient< VoterRepository<Voter>>();
+            services.AddScoped<CandidateRepository<Candidate>>();
+            services.AddTransient<ICandidateService, CandidateService>();
+            services.AddTransient<IVoterService, VoterService>();
             services.AddControllers();
             services.AddScoped<ErrorHandlingMiddleware>();
-            services.AddScoped<VoterRepository<Voter>>();
-            services.AddScoped<CandidateRepository<Candidate>>();
+
             services.AddDbContext<ApplicationDbContext>(optionsBuilder =>
             {
                 optionsBuilder.UseSqlServer(Configuration.GetConnectionString("LocalConnection"));
@@ -52,7 +53,7 @@ namespace VotingApp_RESTAPI
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
-        public void Configure(IApplicationBuilder app, IWebHostEnvironment env, DbContextMigrations dbContextMigrations)
+        public void Configure(IApplicationBuilder app, IWebHostEnvironment env/*, DbContextMigrations dbContextMigrations*/)
         {
             //dbContextMigrations.RunMigraitonPolicy();
             if (env.IsDevelopment())

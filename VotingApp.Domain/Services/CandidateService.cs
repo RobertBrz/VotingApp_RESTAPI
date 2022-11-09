@@ -5,17 +5,19 @@ using System.Security.Authentication.ExtendedProtection;
 using VotingApp.Domain.Models;
 using VotingApp.Helpers.CustomExceptions;
 using VotingApp.Helpers.ModelsDto;
+using VotingApp.Helpers.Repositories;
 
 namespace VotingApp.Domain
 {
     public class CandidateService : ICandidateService
     {
         IMapper _mapper;
-        CandidateRepository<Candidate> _candidateRepository;
+        ICandidateRepository<Candidate> _candidateRepository;
+        //CandidateRepository<Candidate> _candidateRepository;
 
         public CandidateService(
             IMapper mapper,
-            CandidateRepository<Candidate> candidateRepository
+           ICandidateRepository<Candidate> candidateRepository
             )
         {
             _candidateRepository = candidateRepository;

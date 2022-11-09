@@ -5,10 +5,11 @@ using System.Linq;
 using VotingApp.DAL.DBContexts;
 using VotingApp.Domain.Models;
 using VotingApp.Helpers.CustomExceptions;
+using VotingApp.Helpers.Repositories;
 
 namespace VotingApp.DAL.EntitiyFrameworkRepositories
 {
-    public class VoterRepository<T> : IRepository<T> where T : Voter
+    public class VoterRepository<T> : IVoterRepository<T> where T : Voter
     {
         private readonly ApplicationDbContext _dbContext;
         IMapper _mapper;

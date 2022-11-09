@@ -16,7 +16,7 @@ namespace VotingApp.Domain.Models
         public string Name { get; set; }
         public bool HasVoted { get; set; } = false;
 
-        public Voter GetInstance()
+        public IVoter GetInstance()
         {
             return this;
         }

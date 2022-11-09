@@ -2,9 +2,9 @@
 using System;
 using System.Linq;
 
-namespace VotingApp.DAL.EntitiyFrameworkRepositories
+namespace VotingApp.Helpers.Repositories
 {
-    public interface IRepository<T> where T:class
+    public interface IRepository<T> where T : class
     {
         IEnumerable<T> GetAll();
         T GetSingle(int id);
