@@ -1,4 +1,5 @@
 ﻿using AutoMapper;
+using VotingApp.Helpers.MappingProfiles.Interfaces;
 using VotingApp.Helpers.ModelsDto;
 
 namespace VotingApp.Helpers.MappingProfiles
@@ -7,10 +8,10 @@ namespace VotingApp.Helpers.MappingProfiles
     {
         public CandidateMappingProfile()
         {
-            CreateMap<Candidate, CandidateDto>();
-            CreateMap<CandidateDto, Candidate>();
-            CreateMap<VoterDto, Voter>();
-            CreateMap<Voter, VoterDto>();
+            CreateMap<ICandidate, CandidateDto>();
+            CreateMap<CandidateDto, ICandidate>();
+            CreateMap<VoterDto, IVoter>();
+            CreateMap<IVoter, VoterDto>();
         }
     }
 }
