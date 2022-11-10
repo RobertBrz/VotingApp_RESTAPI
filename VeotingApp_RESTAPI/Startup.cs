@@ -16,9 +16,11 @@ using System.Reflection;
 using System.Threading.Tasks;
 using VotingApp.DAL.DBContext;
 using VotingApp.DAL.EntityFrameworkRepositories;
+using VotingApp.Domain.Channels;
 using VotingApp.Domain.MappingProfiles;
 using VotingApp.Domain.Models;
 using VotingApp.Domain.Models.Voter;
+using VotingApp.Domain.Processors;
 using VotingApp.Domain.Services;
 using VotingApp.Domain.Services.Interfaces;
 using VotingApp.Shared.RepositoryInterfaces;
@@ -37,14 +39,20 @@ namespace VotingApp_RESTAPI
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            services.AddControllers();
             services.AddAutoMapper(typeof(CandidateMappingProfile).GetTypeInfo().Assembly);
             services.AddScoped<DbContextMigrations>();
             services.AddTransient<IVoterRepository<Voter>, VoterRepository<Voter>>();
+            services.AddTransient<IVoterService, VoterService>();
             services.AddTransient<ICandidateRepository<Candidate>, CandidateRepository<Candidate>>();
             services.AddTransient<ICandidateService, CandidateService>();
-            services.AddTransient<IVoterService, VoterService>();
             services.AddScoped<ErrorHandlingMiddleware>();
-            services.AddControllers();
+
+            //services.AddScoped<IRaportRepository<>>
+            services.AddSingleton<RaportChannel>();
+            services.AddSingleton<RaportProcessor>();
+            services.AddScoped<IRaportService, RaportService>();
+            services.AddHostedService<RaportBackgroundProcessor>();
 
             services.AddDbContext<ApplicationDbContext>(optionsBuilder =>
             {
