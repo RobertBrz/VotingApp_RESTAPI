@@ -21,8 +21,10 @@ using VotingApp.Domain.MappingProfiles;
 using VotingApp.Domain.Models;
 using VotingApp.Domain.Models.Voter;
 using VotingApp.Domain.Processors;
+using VotingApp.Domain.Requests;
 using VotingApp.Domain.Services;
 using VotingApp.Domain.Services.Interfaces;
+using VotingApp.Shared.IRaportRequest;
 using VotingApp.Shared.RepositoryInterfaces;
 
 namespace VotingApp_RESTAPI
@@ -48,10 +50,10 @@ namespace VotingApp_RESTAPI
             services.AddTransient<ICandidateService, CandidateService>();
             services.AddScoped<ErrorHandlingMiddleware>();
 
-            //services.AddScoped<IRaportRepository<>>
+            services.AddTransient<IRaportRepository<RaportRequest>, RaportRepository<RaportRequest>>();
             services.AddSingleton<RaportChannel>();
-            services.AddSingleton<RaportProcessor>();
             services.AddScoped<IRaportService, RaportService>();
+            services.AddSingleton<RaportProcessor>();
             services.AddHostedService<RaportBackgroundProcessor>();
 
             services.AddDbContext<ApplicationDbContext>(optionsBuilder =>

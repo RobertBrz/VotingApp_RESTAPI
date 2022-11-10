@@ -6,6 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using VotingApp.DAL.DBContext;
+using VotingApp.DAL.Models;
 using VotingApp.Domain.Models;
 using VotingApp.Domain.Requests;
 using VotingApp.Shared.ModelsDto;
@@ -13,18 +14,17 @@ using VotingApp.Shared.RepositoryInterfaces;
 
 namespace VotingApp.DAL.EntityFrameworkRepositories
 {
-    public class ReportRepository<T> : IRaportRepository<T> where T : RaportRequest
+    public class RaportRepository<T> : IRaportRepository<T> where T : RaportRequest
     {
         ApplicationDbContext _applicationDbContext;
-        public ReportRepository(ApplicationDbContext applicationDbContext)
+        public RaportRepository(ApplicationDbContext applicationDbContext)
         {
             _applicationDbContext = applicationDbContext;
         }
 
-        public RaportResult Get(T raportRequest)
+        async Task<object> IRaportRepository<T>.Get(T raportRequest)
         {
             var candidates = _applicationDbContext.Candidates.ToList<Candidate>();
-
             return new RaportResult(candidates);
         }
     }

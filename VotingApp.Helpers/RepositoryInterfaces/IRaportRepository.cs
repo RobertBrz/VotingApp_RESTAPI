@@ -8,8 +8,8 @@ using VotingApp.Shared.ModelsDto;
 
 namespace VotingApp.Shared.RepositoryInterfaces
 {
-    public interface IRaportRepository<T> where T : class 
+    public interface IRaportRepository<T> where T : class
     {
-        RaportResult Get(T raportRequest);
+        Task<object> Get(T raportRequest);
     }
 }

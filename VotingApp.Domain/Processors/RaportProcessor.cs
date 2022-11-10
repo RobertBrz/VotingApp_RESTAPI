@@ -14,15 +14,14 @@ namespace VotingApp.Domain.Processors
     public class RaportProcessor
     {
         IRaportRepository<RaportRequest> _raportRepository;
-        public RaportProcessor( IRaportRepository<RaportRequest> raportRepository)
+        public RaportProcessor(IRaportRepository<RaportRequest> raportRepository)
         {
             _raportRepository = raportRepository;
         }
         public async ValueTask ProcessRaport(RaportRequest raportRequest)
         {
-            //_raportRepository.Get(raportRequest);
-            //raportRequest.
-            //new RaportResult()
+            //business logic 
+            var result = await _raportRepository.Get(raportRequest);
         }
     }
 }
