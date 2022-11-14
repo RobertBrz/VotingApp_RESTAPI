@@ -5,15 +5,14 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using VotingApp.Domain.Models;
 
-namespace VotingApp.DAL.Models
+namespace VotingApp.Shared.ModelsDto
 {
     public class RaportResult
     {
         JObject JsonRaport { get; set; }
 
-        public RaportResult(List<Candidate> candidates)
+        public RaportResult(List<CandidateDto> candidates)
         {
             JsonRaport = JObject.FromObject(candidates);
         }

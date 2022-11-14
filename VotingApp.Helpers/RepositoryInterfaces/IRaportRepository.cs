@@ -10,6 +10,6 @@ namespace VotingApp.Shared.RepositoryInterfaces
 {
     public interface IRaportRepository<T> where T : class
     {
-        Task<object> Get(T raportRequest);
+        Task<RaportResult> Get(T raportRequest);
     }
 }

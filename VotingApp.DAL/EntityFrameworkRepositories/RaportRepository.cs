@@ -1,4 +1,5 @@
-﻿using Microsoft.Extensions.Hosting;
+﻿using AutoMapper;
+using Microsoft.Extensions.Hosting;
 using System;
 using System.Collections.Generic;
 using System.Drawing;
@@ -6,7 +7,6 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using VotingApp.DAL.DBContext;
-using VotingApp.DAL.Models;
 using VotingApp.Domain.Models;
 using VotingApp.Domain.Requests;
 using VotingApp.Shared.ModelsDto;
@@ -17,15 +17,18 @@ namespace VotingApp.DAL.EntityFrameworkRepositories
     public class RaportRepository<T> : IRaportRepository<T> where T : RaportRequest
     {
         ApplicationDbContext _applicationDbContext;
-        public RaportRepository(ApplicationDbContext applicationDbContext)
+        IMapper _mapper;
+        public RaportRepository(ApplicationDbContext applicationDbContext, IMapper mapper)
         {
             _applicationDbContext = applicationDbContext;
+            _mapper = mapper;
         }
 
-        async Task<object> IRaportRepository<T>.Get(T raportRequest)
+        async Task<RaportResult> IRaportRepository<T>.Get(T raportRequest)
         {
             var candidates = _applicationDbContext.Candidates.ToList<Candidate>();
-            return new RaportResult(candidates);
+            var candidatesDto = _mapper.Map<List<CandidateDto>>(candidates);
+            return new RaportResult(candidatesDto);
         }
     }
 }
