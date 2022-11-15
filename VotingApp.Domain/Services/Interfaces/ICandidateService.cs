@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using VotingApp.Shared.ModelsDto;
 
-namespace VotingApp.Domain.Services.Interfaces
+namespace VotingApp.Voters.Domain.Services.Interfaces
 {
     public interface ICandidateService
     {

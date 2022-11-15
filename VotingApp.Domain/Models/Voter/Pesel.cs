@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using VotingApp.Domain.Exceptions;
+using VotingApp.Voters.Domain.Exceptions;
 
-namespace VotingApp.Domain.Models.Voter
+namespace VotingApp.Voters.Domain.Models.Voter
 {
     public class Pesel
     {

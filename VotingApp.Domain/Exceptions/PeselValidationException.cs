@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace VotingApp.Domain.Exceptions
+namespace VotingApp.Voters.Domain.Exceptions
 {
     internal class PeselValidationException : Exception
     {

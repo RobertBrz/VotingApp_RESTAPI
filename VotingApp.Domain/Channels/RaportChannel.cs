@@ -4,10 +4,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Channels;
 using System.Threading.Tasks;
-using VotingApp.Domain.Requests;
 using VotingApp.Shared.ModelsDto;
+using VotingApp.Voters.Domain.Requests;
 
-namespace VotingApp.Domain.Channels
+namespace VotingApp.Voters.Domain.Channels
 {
     public class RaportChannel
     {

@@ -4,11 +4,10 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using VotingApp.Domain.Channels;
-using VotingApp.Domain.Requests;
-using VotingApp.Shared.ModelsDto;
+using VotingApp.Voters.Domain.Channels;
+using VotingApp.Voters.Domain.Requests;
 
-namespace VotingApp.Application
+namespace VotingApp.Raports.Application.Controllers
 {
     [ApiController]
     [Route("api/Raport")]

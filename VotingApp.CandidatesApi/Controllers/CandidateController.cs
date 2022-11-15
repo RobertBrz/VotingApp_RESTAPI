@@ -5,19 +5,19 @@ using Microsoft.AspNetCore.Routing;
 using Microsoft.Extensions.Logging;
 using System.Collections.Generic;
 using System.Linq;
-using VotingApp.Domain.Services.Interfaces;
+using VotingApp.Voters.Domain.Services.Interfaces;
 
-namespace VotingApp.Application
+namespace VotingApp.Candidates.Application.Controllers
 {
     [Route("Candidate")]
     [ApiController]
     public class CandidateController : ControllerBase
     {
         private readonly ICandidateService _candidateService;
-        private readonly ILogger<VoterController> _logger;
+        private readonly ILogger<CandidateController> _logger;
         private readonly IMapper _mapper;
 
-        public CandidateController(ILogger<VoterController> logger,
+        public CandidateController(ILogger<CandidateController> logger,
             ICandidateService candidateService,
             IMapper mapper)
         {

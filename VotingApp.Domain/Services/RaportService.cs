@@ -4,12 +4,12 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Xml;
-using VotingApp.Domain.Channels;
-using VotingApp.Domain.Requests;
-using VotingApp.Domain.Services.Interfaces;
 using VotingApp.Shared.ModelsDto;
+using VotingApp.Voters.Domain.Channels;
+using VotingApp.Voters.Domain.Requests;
+using VotingApp.Voters.Domain.Services.Interfaces;
 
-namespace VotingApp.Domain.Services
+namespace VotingApp.Voters.Domain.Services
 {
     public class RaportService : IRaportService
     {

@@ -1,6 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations;
 
-namespace VotingApp.Domain.Models.Interfaces
+namespace VotingApp.Voters.Domain.Models.Interfaces
 {
     public interface ICandidate
     {

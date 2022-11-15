@@ -9,9 +9,9 @@ using System.Linq;
 using System.Runtime.ConstrainedExecution;
 using System.Text;
 using System.Threading.Tasks;
-using VotingApp.DAL.DBContext;
-using VotingApp.Domain.Models;
 using VotingApp.Shared.ModelsDto;
+using VotingApp.Voters.Domain.Models;
+using VotingApp.Voters.Infrastructure.DBContext;
 using Xunit;
 using Xunit.Sdk;
 

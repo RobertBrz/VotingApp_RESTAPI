@@ -3,7 +3,7 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
-using VotingApp.DAL.DBContext;
+using VotingApp.Voters.Infrastructure.DBContext;
 
 namespace VotingApp_RESTAPI.Migrations
 {

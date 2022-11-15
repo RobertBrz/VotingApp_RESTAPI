@@ -14,18 +14,17 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
 using System.Threading.Tasks;
-using VotingApp.DAL.DBContext;
-using VotingApp.DAL.EntityFrameworkRepositories;
-using VotingApp.Domain.Channels;
-using VotingApp.Domain.MappingProfiles;
-using VotingApp.Domain.Models;
-using VotingApp.Domain.Models.Voter;
-using VotingApp.Domain.Processors;
-using VotingApp.Domain.Requests;
-using VotingApp.Domain.Services;
-using VotingApp.Domain.Services.Interfaces;
+using VotingApp.Candidates.Application;
+using VotingApp.Raports.Application;
 using VotingApp.Shared.IRaportRequest;
 using VotingApp.Shared.RepositoryInterfaces;
+using VotingApp.Voters.Application;
+using VotingApp.Voters.Domain.MappingProfiles;
+using VotingApp.Voters.Domain.Models.Voter;
+using VotingApp.Voters.Domain.Services;
+using VotingApp.Voters.Domain.Services.Interfaces;
+using VotingApp.Voters.Infrastructure.DBContext;
+using VotingApp.Voters.Infrastructure.EntityFrameworkRepositories;
 
 namespace VotingApp_RESTAPI
 {
@@ -43,18 +42,11 @@ namespace VotingApp_RESTAPI
         {
             services.AddControllers();
             services.AddAutoMapper(typeof(CandidateMappingProfile).GetTypeInfo().Assembly);
+            services.AddRaportModule();
+            services.AddCandidateModule();
+            services.AddVotersModule();
             services.AddScoped<DbContextMigrations>();
-            services.AddTransient<IVoterRepository<Voter>, VoterRepository<Voter>>();
-            services.AddTransient<IVoterService, VoterService>();
-            services.AddTransient<ICandidateRepository<Candidate>, CandidateRepository<Candidate>>();
-            services.AddTransient<ICandidateService, CandidateService>();
             services.AddScoped<ErrorHandlingMiddleware>();
-
-            services.AddTransient<IRaportRepository<RaportRequest>, RaportRepository<RaportRequest>>();
-            services.AddSingleton<RaportChannel>();
-            services.AddScoped<IRaportService, RaportService>();
-            services.AddSingleton<RaportProcessor>();
-            services.AddHostedService<RaportBackgroundProcessor>();
 
             services.AddDbContext<ApplicationDbContext>(optionsBuilder =>
             {
@@ -77,6 +69,7 @@ namespace VotingApp_RESTAPI
                 app.UseSwagger();
                 app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "VeotingApp_RESTAPI v1"));
             }
+            app.UseCandidateModule();
             app.UseMiddleware<ErrorHandlingMiddleware>();
 
             app.UseHttpsRedirection();

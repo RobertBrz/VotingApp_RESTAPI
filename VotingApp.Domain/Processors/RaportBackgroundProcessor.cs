@@ -4,10 +4,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using VotingApp.Domain.Channels;
-using VotingApp.Domain.Services;
+using VotingApp.Voters.Domain.Channels;
 
-namespace VotingApp.Domain.Processors
+namespace VotingApp.Voters.Domain.Processors
 {
     public class RaportBackgroundProcessor : BackgroundService
     {

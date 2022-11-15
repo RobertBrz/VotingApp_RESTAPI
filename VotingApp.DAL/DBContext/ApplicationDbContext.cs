@@ -1,9 +1,9 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
-using VotingApp.Domain.Models;
-using VotingApp.Domain.Models.Voter;
+using VotingApp.Voters.Domain.Models;
+using VotingApp.Voters.Domain.Models.Voter;
 
-namespace VotingApp.DAL.DBContext
+namespace VotingApp.Voters.Infrastructure.DBContext
 {
     public class ApplicationDbContext : DbContext
     {

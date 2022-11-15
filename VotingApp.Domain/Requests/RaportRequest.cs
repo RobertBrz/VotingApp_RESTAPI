@@ -5,13 +5,13 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using VotingApp.Domain.Exceptions;
 using VotingApp.Shared.CustomExceptions;
 using VotingApp.Shared.IRaportRequest;
+using VotingApp.Voters.Domain.Exceptions;
 
-namespace VotingApp.Domain.Requests
+namespace VotingApp.Voters.Domain.Requests
 {
-    public class RaportRequest : Shared.IRaportRequest.IRaportRequest
+    public class RaportRequest : IRaportRequest
     {
         [Key]
         public int Id { get; set; }

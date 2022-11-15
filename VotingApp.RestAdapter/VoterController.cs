@@ -4,9 +4,9 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using VotingApp.Domain.Services.Interfaces;
+using VotingApp.Voters.Domain.Services.Interfaces;
 
-namespace VotingApp.Application
+namespace VotingApp.Voters.Application
 {
     [ApiController]
     [Route("Voter")]

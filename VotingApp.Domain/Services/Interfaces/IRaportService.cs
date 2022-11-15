@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace VotingApp.Domain.Services.Interfaces
+namespace VotingApp.Voters.Domain.Services.Interfaces
 {
     public interface IRaportService
     {

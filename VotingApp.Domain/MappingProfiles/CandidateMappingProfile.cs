@@ -1,9 +1,9 @@
 ﻿using AutoMapper;
-using VotingApp.Domain.Models;
-using VotingApp.Domain.Models.Voter;
 using VotingApp.Shared.ModelsDto;
+using VotingApp.Voters.Domain.Models;
+using VotingApp.Voters.Domain.Models.Voter;
 
-namespace VotingApp.Domain.MappingProfiles
+namespace VotingApp.Voters.Domain.MappingProfiles
 {
     public class CandidateMappingProfile : Profile
     {

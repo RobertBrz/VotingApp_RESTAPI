@@ -2,13 +2,13 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Security.Authentication.ExtendedProtection;
-using VotingApp.Domain.Models;
-using VotingApp.Domain.Services.Interfaces;
 using VotingApp.Shared.CustomExceptions;
 using VotingApp.Shared.ModelsDto;
 using VotingApp.Shared.RepositoryInterfaces;
+using VotingApp.Voters.Domain.Models;
+using VotingApp.Voters.Domain.Services.Interfaces;
 
-namespace VotingApp.Domain.Services
+namespace VotingApp.Voters.Domain.Services
 {
     public class CandidateService : ICandidateService
     {
