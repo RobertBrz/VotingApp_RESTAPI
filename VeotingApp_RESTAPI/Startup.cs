@@ -51,6 +51,7 @@ namespace VotingApp_RESTAPI
             {
                 policyBuilder.AllowAnyHeader();
                 policyBuilder.AllowAnyMethod();
+                policyBuilder.AllowAnyOrigin();
             }));
 
             services.AddDbContext<ApplicationDbContext>(optionsBuilder =>

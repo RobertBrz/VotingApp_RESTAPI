@@ -13,8 +13,8 @@ namespace VotingApp.Voters.Domain.MappingProfiles
             CreateMap<CandidateDto, Candidate>();
             CreateMap<VoterDto, Voter>();
             CreateMap<Voter, VoterDto>();
-            CreateMap<List<CandidateDto>, List<Candidate>>();
-            CreateMap<List<Candidate>, List<CandidateDto>>();
+            //CreateMap<List<CandidateDto>, List<Candidate>>();
+            //CreateMap<List<Candidate>, List<CandidateDto>>();
         }
     }
 }
