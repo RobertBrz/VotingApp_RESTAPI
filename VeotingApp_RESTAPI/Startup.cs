@@ -47,6 +47,11 @@ namespace VotingApp_RESTAPI
             services.AddVotersModule();
             services.AddScoped<DbContextMigrations>();
             services.AddScoped<ErrorHandlingMiddleware>();
+            services.AddCors(options => options.AddPolicy("TestPolicy", policyBuilder =>
+            {
+                policyBuilder.AllowAnyHeader();
+                policyBuilder.AllowAnyMethod();
+            }));
 
             services.AddDbContext<ApplicationDbContext>(optionsBuilder =>
             {
@@ -62,6 +67,7 @@ namespace VotingApp_RESTAPI
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env, DbContextMigrations dbContextMigrations)
         {
+            app.UseCors("TestPolicy");
             dbContextMigrations.RunMigraitonPolicy();
             if (env.IsDevelopment())
             {
@@ -77,7 +83,6 @@ namespace VotingApp_RESTAPI
             app.UseRouting();
 
             app.UseAuthorization();
-
 
 
             app.UseEndpoints(endpoints =>

@@ -30,8 +30,9 @@ namespace VotingApp_RESTAPI
                 context.Response.StatusCode = 500;
                 await context.Response.WriteAsync("Duplicated Pesel Error");
             }
-            catch (Exception)
+            catch (Exception ex)
             {
+                await context.Response.WriteAsync(ex.ToString());   
                 context.Response.StatusCode = 400;
                 await context.Response.WriteAsync("Not registered error occured");
             }
