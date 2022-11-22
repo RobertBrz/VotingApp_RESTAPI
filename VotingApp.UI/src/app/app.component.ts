@@ -1,5 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Component } from '@angular/core';
+import { Observable } from 'rxjs';
 
 import { VoterService } from 'src/Services/voter.service'
 import { IVoter } from '../Shared/interfaces';
@@ -11,7 +12,7 @@ import { IVoter } from '../Shared/interfaces';
 })
 export class AppComponent {
   public forecasts?: WeatherForecast[];
-  public voters?: IVoter[];
+  public voters?: Observable<IVoter[]>;
 
   constructor(http: HttpClient,
     private voterService: VoterService) {
@@ -25,8 +26,8 @@ export class AppComponent {
 
   getVoters() {
     var voters = this.voterService.getVoters();
-    voters.forEach(v => console.log(v))
-    console.log(voters);
+    //voters.forEach(v => console.log(v))
+    voters.forEach(item => console.log(item));
   }
 }
 

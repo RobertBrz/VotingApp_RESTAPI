@@ -19,11 +19,16 @@ export class VoterService {
   constructor(private http: HttpClient) { }
 
   getVoters(): Observable<IVoter[]> {
-    return this.http.get<IVoter[]>(this.baseVoterUrl+'Voters')
+    return this.http.get<IVoter[]>(this.baseVoterUrl + 'Voters')
       .pipe(
-        map(voters => {
-          return voters;
-        })
+        map(voters => voters.map((voter): IVoter => ({
+          id: voter.id,
+          name: voter.name,
+          pesel: voter.pesel,
+        })))
+        //map(voters => {
+        //  return voters;
+        //})
       );
   }
 }
