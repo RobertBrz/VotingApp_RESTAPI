@@ -1,0 +1,10 @@
+<h2> {{param}} </h2>
+<table *ngIf="voters$">
+  <tbody>
+    <tr *ngFor="let voter of voters$ | async">
+      <td>{{voter.name}}</td>
+      <td>{{voter.pesel}}</td>
+    </tr>
+  </tbody>
+</table>
+
