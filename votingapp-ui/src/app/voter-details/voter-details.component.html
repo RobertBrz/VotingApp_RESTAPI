@@ -1,0 +1,12 @@
+<p>voter-details works!</p>
+
+<button type="button" (click)="goBack()">go back</button>
+<div *ngIf="voter">
+
+    <h2>{{voter.name | uppercase}} Details</h2>
+    <div><span>id: </span>{{voter.id}}</div>
+    <div>
+      <label for="name">Hero name: </label>
+      <input id="name" [(ngModel)]="voter.name" placeholder="name">
+    </div>
+</div>
