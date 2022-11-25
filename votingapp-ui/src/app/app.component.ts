@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { VoterComponent } from './voter/voter.component';
 
 @Component({
   selector: 'app-root',

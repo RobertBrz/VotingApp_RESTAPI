@@ -1,0 +1,12 @@
+<p>Voters List</p>
+
+
+<ul>
+    <li *ngFor="let voter of voters">
+    <span>ID: {{voter.id}} </span>
+    <label for="cos" >Voter name: </label> 
+    <input id="name" [(ngModel)]="voter.name" placeholder="name"> 
+    <span>Name: {{voter.name |uppercase}} </span>
+    <span>Pesel: {{voter.pesel}} </span>
+    </li>
+</ul>
