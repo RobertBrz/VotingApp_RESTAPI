@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { VoterComponent } from './voter/voter.component';
+import { VoterComponent } from './voters/voter/voter.component';
 
 @Component({
   selector: 'app-root',

@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
-import {HttpClient, HttpClientModule}from '@angular/common/http'
-import { Observable } from 'rxjs';
-import { IVoter } from '../models/voter';
+import {HttpClient, HttpClientModule, HttpParams }from '@angular/common/http'
+import { catchError, Observable, throwError } from 'rxjs';
+import { IVoter, Voter } from '../models/voter';
 import { MessageService } from './message.service';
 
 
@@ -27,7 +27,19 @@ baseUrl= 'https://localhost:5001/Voter/';
   return  result;
   }
 
-  postVoter(voter : IVoter):void {
-    this.http.post(this.baseUrl+'Add', voter);
+  postVoter(voter : Voter):Observable<Voter> {
+    this.messageService.addMessage("post voter "+voter.name+" " + voter.id +" "+ voter.pesel)
+    // var vJson = JSON.stringify(voter);
+  //   let  params  =  new HttpParams()
+  //    .append('name', voter.name)
+  //    .append('pesel', voter.pesel);
+  //  return  this.http.post<Voter>(this.baseUrl+'A?name='+voter.name+'&pesel='+voter.pesel,{params:params});
+  //return  this.http.post<any>(this.baseUrl+'Add',{name:params.get("name") , pesel:params.get('pesel')});
+    
+   return this.http.post<Voter>(this.baseUrl+'Add', voter);
+    // .pipe(
+    //   catchError(this.handleError('addHero', hero))
+    this.messageService.addMessage("sent ");
   }
+  
 }

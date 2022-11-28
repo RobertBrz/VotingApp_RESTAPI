@@ -1,9 +1,9 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { IVoter } from '../models/voter';
+import { IVoter } from '../../models/voter';
 import {Location} from '@angular/common';
-import { VoterService } from '../services/voter.service';
+import { VoterService } from '../../services/voter.service';
 import { ActivatedRoute } from '@angular/router';
-import { MessageService } from '../services/message.service';
+import { MessageService } from '../../services/message.service';
 
 @Component({
   selector: 'app-voter-details',

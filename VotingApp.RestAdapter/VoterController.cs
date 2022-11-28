@@ -4,6 +4,8 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using System.Xml.Linq;
+using VotingApp.Voters.Domain.Models.Voter;
 using VotingApp.Voters.Domain.Services.Interfaces;
 
 namespace VotingApp.Voters.Application
@@ -25,11 +27,12 @@ namespace VotingApp.Voters.Application
 
         [HttpPost]
         [Route("Add")]
-        public IActionResult AddVoter([FromQuery] string name, long pesel)
+        public IActionResult AddVoter([FromBody] Voter voter)
         {
-            _voterService.AddVoter(name, pesel);
-            return Ok();
+            _voterService.AddVoter(voter.Name, voter.Pesel);
+            return Ok(voter);
         }
+       
 
         [HttpGet]
         [Route("Voters")]

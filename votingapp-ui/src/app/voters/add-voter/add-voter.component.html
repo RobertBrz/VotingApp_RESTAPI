@@ -1,0 +1,10 @@
+<p>Add New Voter</p>
+
+<div class="form-group">
+    <label for="name"> Name </label>
+    <input type="text" class="form-control" id="name"  [(ngModel)]="voter.name" name="name">
+    <label for="pesel">Pesel</label>
+    <input type="number" class="form-control" id="pesel"  [(ngModel)]="voter.pesel" name="pesel">
+</div>
+
+<button type="button" (click)="postNewVoter()"  >Add</button>

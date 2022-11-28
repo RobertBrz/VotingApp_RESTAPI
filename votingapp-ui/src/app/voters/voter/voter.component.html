@@ -3,10 +3,12 @@
 <button type="button" (click)="goBack()">go back</button>
 <ul>
     <li *ngFor="let voter of voters">
-<a routerLink="/detail/{{voter.id}}">
-    <span >{{voter.id}}</span>
+    <span >ID: {{voter.id}}</span>
+    <span>Name: {{voter.name | uppercase}} </span>
+    <span>Pesel:  {{voter.pesel}}</span>
+    <a routerLink="/detail/{{voter.id}}">
+    <button type="button" >Edit </button>
 </a>
-
         <!-- <button [class.selected]="voter === selectedVoter"  type ="button" (click)="onSelect(voter)">
             <span>ID: {{voter.id}} </span>
             <label for="cos" >Voter name: </label> 
@@ -16,6 +18,11 @@
         </button> -->
     </li>
 </ul>
+
+
+ <a routerLink="/addVoters"> 
+    <button type="button">Add New Voter</button>
+ </a> 
 
 <!-- <app-voter-details [selectedVoter]="selectedVoter"></app-voter-details> -->
 

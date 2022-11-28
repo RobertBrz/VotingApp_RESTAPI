@@ -1,8 +1,8 @@
 import { Component  ,OnInit} from '@angular/core';
-import { VoterService } from '../services/voter.service';
-import { IVoter } from '../models/voter';
+import { VoterService } from '../../services/voter.service';
+import { IVoter } from '../../models/voter';
 import { FormsModule } from '@angular/forms';
-import { MessageService } from '../services/message.service';
+import { MessageService } from '../../services/message.service';
 import { VoterDetailsComponent } from '../voter-details/voter-details.component';
 import {Location} from '@angular/common';
 
