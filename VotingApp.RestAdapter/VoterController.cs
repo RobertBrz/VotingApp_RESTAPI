@@ -28,7 +28,7 @@ namespace VotingApp.Voters.Application
 
         [HttpPost]
         [Route("Add")]
-        public IActionResult AddVoter([FromBody] Voter voter)
+        public IActionResult AddVoter([FromBody] VoterDto voter)
         {
             _voterService.AddVoter(voter.Name, voter.Pesel);
             return Ok(voter);
