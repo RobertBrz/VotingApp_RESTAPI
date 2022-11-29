@@ -2,7 +2,7 @@
 <button type="button" (click)="goBack()">go back</button>
 <ul>
     <li *ngFor="let candidate of candidates">
-<!-- <a routerLink="/detail/{{candidate.id}}"> -->
+ <a routerLink="/candidate/detail/{{candidate.id}}"> 
     <span >{{candidate.id}}</span>
     <span >{{candidate.name}}</span>
-<!-- </a> -->
+ </a> 

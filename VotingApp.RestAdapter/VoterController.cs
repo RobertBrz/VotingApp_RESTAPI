@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Xml.Linq;
+using VotingApp.Shared.ModelsDto;
 using VotingApp.Voters.Domain.Models.Voter;
 using VotingApp.Voters.Domain.Services.Interfaces;
 
@@ -32,7 +33,7 @@ namespace VotingApp.Voters.Application
             _voterService.AddVoter(voter.Name, voter.Pesel);
             return Ok(voter);
         }
-       
+
 
         [HttpGet]
         [Route("Voters")]
@@ -50,9 +51,9 @@ namespace VotingApp.Voters.Application
 
         [HttpPost]
         [Route("Vote/{voterid}")]
-        public IActionResult Vote([FromQuery] int candidateid, [FromRoute] int voterid)
+        public IActionResult Vote([FromBody] VoteDto voteDto)
         {
-            _voterService.Vote(candidateid, voterid);
+            _voterService.Vote(voteDto);
             return Ok();
         }
     }

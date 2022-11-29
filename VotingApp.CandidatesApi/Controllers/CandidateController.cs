@@ -5,6 +5,7 @@ using Microsoft.AspNetCore.Routing;
 using Microsoft.Extensions.Logging;
 using System.Collections.Generic;
 using System.Linq;
+using VotingApp.Shared.ModelsDto;
 using VotingApp.Voters.Domain.Services.Interfaces;
 
 namespace VotingApp.Candidates.Application.Controllers
@@ -42,9 +43,9 @@ namespace VotingApp.Candidates.Application.Controllers
 
         [HttpPost]
         [Route("AddCandidate")]
-        public IActionResult AddCandidate([FromQuery] string name, long pesel)
+        public IActionResult AddCandidate([FromBody] CandidateDto candidateDto)
         {
-            _candidateService.AddCandidate(name, pesel);
+            _candidateService.AddCandidate(candidateDto);
             return Ok();
         }
     }

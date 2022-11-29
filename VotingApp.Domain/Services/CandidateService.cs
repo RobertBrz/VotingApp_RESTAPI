@@ -2,14 +2,17 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Security.Authentication.ExtendedProtection;
+using System.Xml.Linq;
 using VotingApp.Shared.CustomExceptions;
 using VotingApp.Shared.ModelsDto;
 using VotingApp.Shared.RepositoryInterfaces;
 using VotingApp.Voters.Domain.Models;
+using VotingApp.Voters.Domain.Models.Voter;
 using VotingApp.Voters.Domain.Services.Interfaces;
 
 namespace VotingApp.Voters.Domain.Services
 {
+
     public class CandidateService : ICandidateService
     {
         IMapper _mapper;
@@ -25,9 +28,8 @@ namespace VotingApp.Voters.Domain.Services
             _mapper = mapper;
         }
 
-        public void AddCandidate(string name, long pesel)
+        public void AddCandidate(CandidateDto candidateDto)
         {
-            var candidateDto = new CandidateDto(name, pesel);
             var candidate = _mapper.Map<Candidate>(candidateDto);
             _candidateRepository.AddSingle(candidate);
         }

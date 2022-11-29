@@ -11,6 +11,7 @@ import { VoterDetailsComponent } from './voters/voter-details/voter-details.comp
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { CandidateComponent } from './candidates/candidate/candidate.component';
 import { AddVoterComponent } from './voters/add-voter/add-voter.component';
+import { CandidateDetailsComponent } from './candidates/candidate-details/candidate-details.component';
 
 @NgModule({
   declarations: [
@@ -21,6 +22,7 @@ import { AddVoterComponent } from './voters/add-voter/add-voter.component';
     DashboardComponent,
     CandidateComponent,
     AddVoterComponent,
+    CandidateDetailsComponent,
   ],
   imports: [
     BrowserModule,

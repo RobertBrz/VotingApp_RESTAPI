@@ -43,10 +43,9 @@ namespace VotingApp.Voters.Domain.Services
             _voterRepository.AddSingle(_mapper.Map<Voter>(voterDto));
         }
 
-        public void Vote(int candidateid, int id)
+        public void Vote(VoteDto voteDto)
         {
-
-            _voterRepository.Vote(candidateid, id);
+            _voterRepository.Vote(voteDto.CandidateID, voteDto.VoterID);
         }
     }
 }

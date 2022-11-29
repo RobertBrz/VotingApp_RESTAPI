@@ -8,6 +8,6 @@ namespace VotingApp.Voters.Domain.Services.Interfaces
     {
         IEnumerable<CandidateDto> GetCandidates();
         CandidateDto GetCandidate(int id);
-        void AddCandidate(string name, long pesel);
+        void AddCandidate(CandidateDto candidateDto);
     }
 }

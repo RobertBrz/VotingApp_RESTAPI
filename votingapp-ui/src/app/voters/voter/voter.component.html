@@ -6,7 +6,7 @@
     <span >ID: {{voter.id}}</span>
     <span>Name: {{voter.name | uppercase}} </span>
     <span>Pesel:  {{voter.pesel}}</span>
-    <a routerLink="/detail/{{voter.id}}">
+    <a routerLink="/voter/detail/{{voter.id}}">
     <button type="button" >Edit </button>
 </a>
         <!-- <button [class.selected]="voter === selectedVoter"  type ="button" (click)="onSelect(voter)">
