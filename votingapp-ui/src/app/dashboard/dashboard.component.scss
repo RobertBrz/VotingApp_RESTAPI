@@ -5,11 +5,15 @@
 }
 
 .link{
-  
     display: flex;
     justify-content: center;
     flex-direction:  row;
+    text-align: center;
+    height: 50px;
+    vertical-align: center;
+    line-height: 50px;
 }
+
 .link:hover{
     background-color: lightgray;
 }

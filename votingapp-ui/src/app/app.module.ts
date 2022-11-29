@@ -12,6 +12,7 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import { CandidateComponent } from './candidates/candidate/candidate.component';
 import { AddVoterComponent } from './voters/add-voter/add-voter.component';
 import { CandidateDetailsComponent } from './candidates/candidate-details/candidate-details.component';
+import { DoVoteComponent } from './do-vote/do-vote.component';
 
 @NgModule({
   declarations: [
@@ -23,6 +24,7 @@ import { CandidateDetailsComponent } from './candidates/candidate-details/candid
     CandidateComponent,
     AddVoterComponent,
     CandidateDetailsComponent,
+    DoVoteComponent,
   ],
   imports: [
     BrowserModule,

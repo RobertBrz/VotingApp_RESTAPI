@@ -1,28 +1,22 @@
 <p>Voters List</p>
 
-<button type="button" (click)="goBack()">go back</button>
-<ul>
-    <li *ngFor="let voter of voters">
-    <span >ID: {{voter.id}}</span>
-    <span>Name: {{voter.name | uppercase}} </span>
-    <span>Pesel:  {{voter.pesel}}</span>
-    <a routerLink="/voter/detail/{{voter.id}}">
+<button  type="button" (click)="goBack()">go back</button>
+<table>
+<tr>
+    <th>Id</th>
+    <th>Name</th>
+    <th>Pesel</th>
+</tr>
+
+    <tr *ngFor="let voter of voters">
+<td>   <span > {{voter.id}}</span></td>
+<td>   <span> {{voter.name | uppercase}} </span></td>
+<td><span>  {{voter.pesel}}</span></td>
+<td>   <a routerLink="/voter/detail/{{voter.id}}">
     <button type="button" >Edit </button>
-</a>
-        <!-- <button [class.selected]="voter === selectedVoter"  type ="button" (click)="onSelect(voter)">
-            <span>ID: {{voter.id}} </span>
-            <label for="cos" >Voter name: </label> 
-            <input id="name" [(ngModel)]="voter.name" placeholder="name"> 
-            <span>Name: {{voter.name |uppercase}} </span>
-            <span>Pesel: {{voter.pesel}} </span>
-        </button> -->
-    </li>
-</ul>
-
-
+</a></td>
+    </tr>
+</table>
  <a routerLink="/addVoters"> 
     <button type="button">Add New Voter</button>
  </a> 
-
-<!-- <app-voter-details [selectedVoter]="selectedVoter"></app-voter-details> -->
-

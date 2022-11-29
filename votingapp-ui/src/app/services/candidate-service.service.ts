@@ -16,4 +16,8 @@ export class CandidateServiceService {
     return this.http.get<ICandidate[]>(this.baseUrl+'GetAll');
   }
 
+  getCandidate(id:number  ):Observable<ICandidate>{
+    return this.http.get<ICandidate>(this.baseUrl+id);
+  }
+
 }

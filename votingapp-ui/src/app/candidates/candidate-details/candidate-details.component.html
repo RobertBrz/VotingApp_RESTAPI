@@ -1,2 +1,13 @@
 <p>candidate-details works!</p>
 <button type="button" (click)="goBack()">go back</button>
+
+<div *ngIf="candidate">
+    <h2>{{candidate.name | uppercase}} Details</h2>
+    <div><span>id: </span>{{candidate.id}}</div>
+    <div>
+      <label for="name">Name: </label>
+      <input id="name" [(ngModel)]="candidate.name" placeholder="name">
+      <label for="pesel">Pesel: </label>
+      <input id="pesel" [(ngModel)]="candidate.pesel" placeholder="pesel">
+    </div>
+</div>

@@ -1,8 +1,8 @@
-<p>Logs: </p>
-
-
-<div  *ngIf="messageService.messageList.length">
-<h2>Messages</h2>
-<button type="button" class="clear" (click)="messageService.clear()">Clear Messages</button>
-<div *ngFor="let messages of messageService.messageList">{{messages}}</div>
+<div class="logs">
+    <p>Logs: </p>
+    <div  *ngIf="messageService.messageList.length">
+    <button type="button" class="clear" (click)="messageService.clear()">Clear Logs</button>
+    <div *ngFor="let messages of messageService.messageList">{{messages}}</div>
+    </div>
 </div>
+

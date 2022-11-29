@@ -1,8 +1,17 @@
 <p>Candidate List </p>
 <button type="button" (click)="goBack()">go back</button>
-<ul>
-    <li *ngFor="let candidate of candidates">
- <a routerLink="/candidate/detail/{{candidate.id}}"> 
-    <span >{{candidate.id}}</span>
-    <span >{{candidate.name}}</span>
- </a> 
+
+<table>
+<tr>
+    <th>ID</th>
+    <th>Name</th>
+</tr>
+    <tr *ngFor="let candidate of candidates">
+        <td> <span >{{candidate.id}}</span></td>
+        <td> <span >{{candidate.name}}</span></td>      
+        <td> <a routerLink="/candidate/detail/{{candidate.id}}"> <button> Edit </button></a></td>
+    </tr>
+</table>
+   
+ 
+ 
