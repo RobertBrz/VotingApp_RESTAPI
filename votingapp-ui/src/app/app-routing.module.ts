@@ -16,7 +16,8 @@ const routes: Routes = [
   {path:'candidates', component:CandidateComponent},
   {path:'addVoters', component:AddVoterComponent},
   {path: 'candidate/detail/:id' , component:CandidateDetailsComponent},
-  {path:'vote',component:DoVoteComponent}
+  {path:'vote',component:DoVoteComponent},
+  { path: 'lazy', loadChildren: () => import('./lazy/lazy.module').then(m => m.LazyModule) },
 ];
 
 @NgModule({
