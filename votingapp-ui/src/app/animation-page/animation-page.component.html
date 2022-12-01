@@ -1,0 +1,9 @@
+<p>animation-page works!</p>
+
+<nav > 
+    <button type="button" (click)="toogle()">Toogle Open Close </button>
+</nav>
+
+<div [@openClose]="isOpen ? 'open' : 'closed'"  >
+<p>The box is now {{isOpen ? 'Open' : 'Closed'}}</p>
+</div>

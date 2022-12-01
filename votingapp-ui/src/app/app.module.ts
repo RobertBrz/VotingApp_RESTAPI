@@ -13,6 +13,10 @@ import { CandidateComponent } from './candidates/candidate/candidate.component';
 import { AddVoterComponent } from './voters/add-voter/add-voter.component';
 import { CandidateDetailsComponent } from './candidates/candidate-details/candidate-details.component';
 import { DoVoteComponent } from './do-vote/do-vote.component';
+import { AnimationPageComponent } from './animation-page/animation-page.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { NewnavigationComponent } from './newnavigation/newnavigation.component';
+
 
 @NgModule({
   declarations: [
@@ -25,12 +29,15 @@ import { DoVoteComponent } from './do-vote/do-vote.component';
     AddVoterComponent,
     CandidateDetailsComponent,
     DoVoteComponent,
+    AnimationPageComponent,
+    NewnavigationComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    FormsModule
+    FormsModule,
+    BrowserAnimationsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -1,9 +1,11 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { AnimationPageComponent } from './animation-page/animation-page.component';
 import { CandidateDetailsComponent } from './candidates/candidate-details/candidate-details.component';
 import { CandidateComponent } from './candidates/candidate/candidate.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { DoVoteComponent } from './do-vote/do-vote.component';
+import { NewnavigationComponent } from './newnavigation/newnavigation.component';
 import { AddVoterComponent } from './voters/add-voter/add-voter.component';
 import { VoterDetailsComponent } from './voters/voter-details/voter-details.component';
 import { VoterComponent } from './voters/voter/voter.component';
@@ -18,6 +20,8 @@ const routes: Routes = [
   {path: 'candidate/detail/:id' , component:CandidateDetailsComponent},
   {path:'vote',component:DoVoteComponent},
   { path: 'lazy', loadChildren: () => import('./lazy/lazy.module').then(m => m.LazyModule) },
+  {path : 'animation', component: AnimationPageComponent},
+  {path :'newnavigation', component:NewnavigationComponent}
 ];
 
 @NgModule({
