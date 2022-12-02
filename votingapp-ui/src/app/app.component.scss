@@ -1,10 +1,119 @@
-@import url('https://unpkg.com/bootstrap@3.3.7/dist/css/bootstrap.min.css');
-
-footer{
-    background:papayawhip;
-    position: absolute;
+.navigation {
+    height: 100vh;
+    width:100%;
+    background-image:linear-gradient(rgba(0,0,0,1),rgba(0,0,0,0.2)) , url(../app/localresources/graffiticorridor.jfif);
+    background-size: cover;
+    background-position: center;
+    
+    }
+    
+    nav{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding-top:40px;
+        padding-left: 10%;
+        padding-right: 10%;
+    }
+    
+    .logo{
+    color: white;
+    font-size: 28px;
+    }
+    
+    span{
+      color: lightpink;  
+    }
+    
+    nav ul li{
+        list-style-type:none;
+        display:inline-block;
+        padding : 10px 20px;
+    }
+    
+    nav ul li  a{
+        color:lightpink;
+        text-decoration: none;
+        font-weight: bold;
+    }
+    
+    nav ul li a:hover {
+        color: lightblue;
+        transition: .3s;
+        cursor: pointer;
+    }
+    
+    button{
+        border-color: white;
+       border-width:  3px;
+        background:lightpink;
+        border-radius: 30px;
+        color:white;
+        font-weight:bold;
+        font-size: 15px;
+        transition: .6s;
+        padding:12px 30px;
+    }
+    
+    button:hover{
+        transform: scale(1.1);
+        cursor: pointer;
+    }
+  
+    .signInButton{
+        border-radius: 30px 0px 0px 30px;
+    }
+    .singUpButton{
+        border-radius: 0px 30px 30px 0px;
+    }
+    
+    .chat-popup{
+    position:fixed;
     bottom: 0;
-    width: 100%;
-height: 100px;
-    margin: 0;
-}
+    right: 15px;
+    background-image: url(../app/localresources/gtaperson-removebg-previewwithcloud.png);
+    background-size:cover;
+    background-position: center;
+    padding:300px 250px ;
+    }
+    
+    .chat-popup button{
+        position:absolute;
+        top:25px;
+        right:35px;
+        background-color: transparent;
+        color: black;
+        border: 0;
+    }
+    
+    .chat-logo{
+        width: 50px;
+        height: 50px;
+        position: absolute;
+        background-image:url(../app/localresources/messengerlogo.png);
+        background-size: cover;
+        background-position: center;
+        top:60px;
+        right:75px;
+        transition: .3s;
+    }
+    .chat-logo:hover{
+        transform: scale(1.1);
+        cursor: pointer;
+        
+    }
+    
+    .editButton {
+    background-color: lightpink;
+    border: 0px;
+    margin:2px;
+    }
+
+    .page{
+    color: lightpink;
+    width: 50%;
+    align-content: center;
+    text-align:center;
+    margin: 0 auto;
+    }
+    

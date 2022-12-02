@@ -15,7 +15,6 @@ import { CandidateDetailsComponent } from './candidates/candidate-details/candid
 import { DoVoteComponent } from './do-vote/do-vote.component';
 import { AnimationPageComponent } from './animation-page/animation-page.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { NewnavigationComponent } from './newnavigation/newnavigation.component';
 
 
 @NgModule({
@@ -30,7 +29,6 @@ import { NewnavigationComponent } from './newnavigation/newnavigation.component'
     CandidateDetailsComponent,
     DoVoteComponent,
     AnimationPageComponent,
-    NewnavigationComponent,
   ],
   imports: [
     BrowserModule,

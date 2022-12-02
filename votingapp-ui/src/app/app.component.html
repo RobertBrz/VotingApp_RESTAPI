@@ -1,6 +1,34 @@
-<div class="page" >
-  <router-outlet></router-outlet>
+<div class="navigation">
+  <nav>
+      <h2 class="logo">Voting<span>App</span></h2>
+      <ul>
+        <li>
+          <a class="link" routerLink ="/voters">Voters</a>
+        </li>
+        <li><a class="link" routerLink="/candidates">Candidates</a></li>
+        <li><a class="link" routerLink="/vote">Vote</a></li>
+        <li><a class="link" routerLink="/lazy">Lazy Page</a> </li>
+        <li><a class="link" routerLink="/animation">Animation</a></li>
+      </ul>
+      <div>
+        <button class="signInButton" type="button">Sing In</button>
+        <button   class="singUpButton" type="button"> Sing Up</button>
+      </div>
+  </nav>
+  <div class="page" >
+    <router-outlet></router-outlet>
+  </div>
 </div>
+
+<div class="chat-popup" >
+  <button>Lets talk!</button>
+  <a >
+      <div class="chat-logo"></div>
+  </a>
+</div>
+
+
+
 <!-- <footer>
   <app-message></app-message>
 </footer> -->
