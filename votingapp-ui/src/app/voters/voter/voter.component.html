@@ -2,19 +2,19 @@
 
 <button  type="button" (click)="goBack()">go back</button>
 <table>
-<tr>
+    <tr>
     <th>Id</th>
     <th>Name</th>
     <th>Pesel</th>
-</tr>
+    </tr>
 
     <tr *ngFor="let voter of voters">
-<td>   <span > {{voter.id}}</span></td>
-<td>   <span> {{voter.name | uppercase}} </span></td>
-<td><span>  {{voter.pesel}}</span></td>
-<td>   <a routerLink="/voter/detail/{{voter.id}}">
+    <td>   <span > {{voter.id}}</span></td>
+    <td>   <span> {{voter.name | uppercase}} </span></td>
+    <td><span>  {{voter.pesel}}</span></td>
+    <td>   <a routerLink="/voter/detail/{{voter.id}}">
     <button type="button" >Edit </button>
-</a></td>
+    </a></td>
     </tr>
 </table>
  <a routerLink="/addVoters"> 

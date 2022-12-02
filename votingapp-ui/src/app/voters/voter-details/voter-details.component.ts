@@ -36,4 +36,8 @@ getHero():void{
  this .messageService.addMessage("id is "+id);
  this.voterServices.getVoter(id).subscribe(voter=>this.voter = voter);
 }
+
+updateVoter(){
+  
+}
 }

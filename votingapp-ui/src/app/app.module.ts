@@ -15,6 +15,7 @@ import { CandidateDetailsComponent } from './candidates/candidate-details/candid
 import { DoVoteComponent } from './do-vote/do-vote.component';
 import { AnimationPageComponent } from './animation-page/animation-page.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { AddCandidateComponent } from './candidates/add-candidate/add-candidate.component';
 
 
 @NgModule({
@@ -29,6 +30,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     CandidateDetailsComponent,
     DoVoteComponent,
     AnimationPageComponent,
+    AddCandidateComponent,
   ],
   imports: [
     BrowserModule,

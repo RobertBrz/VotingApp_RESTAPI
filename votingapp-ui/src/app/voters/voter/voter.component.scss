@@ -1,8 +1,11 @@
 table{
-border:1px solid gray;
-border-collapse: separate;
+border:1px solid white;
 padding:5px;
 width: 100%;
+}
+
+table  :hover{
+    background: linear-gradient(#e66465, #9198e5);
 }
 
 p{
