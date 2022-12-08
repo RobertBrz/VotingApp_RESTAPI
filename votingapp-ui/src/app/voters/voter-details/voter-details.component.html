@@ -1,5 +1,3 @@
-<p>voter-details works!</p>
-
 <button type="button" (click)="goBack()">go back</button>
 <div *ngIf="voter">
     <h2>{{voter.name | uppercase}} Details</h2>
@@ -11,5 +9,6 @@
       <input id="pesel" [(ngModel)]="voter.pesel" placeholder="pesel">
     </div>
 
-    <button type="button" (clicl)="updateVoter()">Update</button>
+    
+    <button type="button" (click)="updateVoter()">Update</button>
 </div>

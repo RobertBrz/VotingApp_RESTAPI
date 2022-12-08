@@ -1,6 +1,4 @@
 <p>Voters List</p>
-
-<button  type="button" (click)="goBack()">go back</button>
 <table>
     <tr>
     <th>Id</th>
@@ -13,7 +11,7 @@
     <td>   <span> {{voter.name | uppercase}} </span></td>
     <td><span>  {{voter.pesel}}</span></td>
     <td>   <a routerLink="/voter/detail/{{voter.id}}">
-    <button type="button" >Edit </button>
+    <button class="editButton" type="button" >Edit </button>
     </a></td>
     </tr>
 </table>

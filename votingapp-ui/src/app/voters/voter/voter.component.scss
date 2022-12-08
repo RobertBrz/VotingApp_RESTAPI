@@ -12,6 +12,17 @@ p{
     text-align: center;
 }
 
-button{
+.editButton{
     cursor:  pointer;
+    padding: 5px;
+    color: white;
+    background-color: lightpink;
+    border:none;
+    width:100%;
 }
+
+Button{
+    cursor: pointer;
+}
+
+

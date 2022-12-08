@@ -10,6 +10,8 @@ namespace VotingApp.Shared.RepositoryInterfaces
         T GetSingle(int id);
         void AddSingle(T param);
 
+        T UpdateSingle( T param);
+
         void SaveChanges();
 
         //IEnumerable<T> GetOverview(Func<T, bool> predicate = null);

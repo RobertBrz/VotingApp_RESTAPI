@@ -39,5 +39,10 @@ namespace VotingApp.Voters.Infrastructure.EntityFrameworkRepositories
         {
             _applicationDbContext.SaveChanges();
         }
+
+        public T UpdateSingle(T param)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

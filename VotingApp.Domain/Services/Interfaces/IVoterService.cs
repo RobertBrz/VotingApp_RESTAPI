@@ -8,5 +8,6 @@ namespace VotingApp.Voters.Domain.Services.Interfaces
         VoterDto GetVoter(int id);
         IEnumerable<VoterDto> GetVoters();
         void Vote(VoteDto voteDto);
+        VoterDto UpdateVoter( VoterDto voterDto);
     }
 }

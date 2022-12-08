@@ -54,6 +54,17 @@ namespace VotingApp.Voters.Infrastructure.EntityFrameworkRepositories
             _dbContext.SaveChanges();
         }
 
+        public T UpdateSingle( T param)
+        {
+            var voter = _dbContext.Voters.FirstOrDefault(v => v.Id == param.Id);
+            if (voter == null) throw new VoterNotFoundException();
 
+            voter.Pesel = param.Pesel;
+            voter.Name = param.Name;
+
+            _dbContext.SaveChanges();
+
+            return (T)voter;
+        }
     }
 }

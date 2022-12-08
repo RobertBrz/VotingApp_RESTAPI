@@ -56,5 +56,12 @@ namespace VotingApp.Voters.Application
             _voterService.Vote(voteDto);
             return Ok();
         }
+
+        [HttpPut]
+        [Route("Update")]
+        public IActionResult UpdateVoter([FromBody] VoterDto voter)
+        {
+            return Ok(_voterService.UpdateVoter( voter));
+        }
     }
 }

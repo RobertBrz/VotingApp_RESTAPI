@@ -16,7 +16,9 @@ import { DoVoteComponent } from './do-vote/do-vote.component';
 import { AnimationPageComponent } from './animation-page/animation-page.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AddCandidateComponent } from './candidates/add-candidate/add-candidate.component';
-
+import { NewVoterConfirmationComponent } from './voters/new-voter-confirmation/new-voter-confirmation.component';
+import { FacebookModule } from 'ngx-facebook';
+import { AddCandidateConfirmationComponent } from './candidates/add-candidate-confirmation/add-candidate-confirmation.component';
 
 @NgModule({
   declarations: [
@@ -31,13 +33,16 @@ import { AddCandidateComponent } from './candidates/add-candidate/add-candidate.
     DoVoteComponent,
     AnimationPageComponent,
     AddCandidateComponent,
+    NewVoterConfirmationComponent,
+    AddCandidateConfirmationComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
     FormsModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    FacebookModule.forRoot()
   ],
   providers: [],
   bootstrap: [AppComponent]

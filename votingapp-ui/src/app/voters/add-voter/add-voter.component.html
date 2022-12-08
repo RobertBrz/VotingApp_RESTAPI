@@ -6,5 +6,8 @@
     <label for="pesel">Pesel</label>
     <input type="number" class="form-control" id="pesel"  [(ngModel)]="voter.pesel" name="pesel">
 </div>
+<button type="button" (click)="goBack()">go back</button>
 
+<a routerLink="/newVoterConfirmation"> 
 <button type="button" (click)="postNewVoter()"  >Add</button>
+</a>

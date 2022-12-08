@@ -4,6 +4,7 @@ import {Location} from '@angular/common';
 import { VoterService } from '../../services/voter.service';
 import { ActivatedRoute } from '@angular/router';
 import { MessageService } from '../../services/message.service';
+import { concatWith } from 'rxjs';
 
 @Component({
   selector: 'app-voter-details',
@@ -15,7 +16,7 @@ export class VoterDetailsComponent  implements OnInit{
 
 constructor(
 private route:ActivatedRoute,
-private voterServices: VoterService,
+private voterService: VoterService,
 private location :  Location,
 private messageService :MessageService
 ){
@@ -34,10 +35,10 @@ this.getHero();
 getHero():void{
  const id  = Number(this.route.snapshot.paramMap.get('id'));
  this .messageService.addMessage("id is "+id);
- this.voterServices.getVoter(id).subscribe(voter=>this.voter = voter);
+ this.voterService.getVoter(id).subscribe(voter=>this.voter = voter);
 }
 
-updateVoter(){
-  
+updateVoter():void {
+  this.voterService.putVoter(this.voter).subscribe(p=>console.log(p));;
 }
 }
