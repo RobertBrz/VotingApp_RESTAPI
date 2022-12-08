@@ -1,6 +1,39 @@
-table{
-    border:1px solid gray;
-    border-collapse: separate;
-    padding:5px;
+
+
+p{
+    text-align: center;
+}
+
+.editButton{
+    cursor:  pointer;
+    padding: 5px;
+    color: white;
+    background-color: lightpink;
+    border:none;
+    width:100%;
+}
+
+Button{
+    cursor: pointer;
     width: 100%;
-    }
+    height:100%;
+    border-radius: 20px;
+    color: black;
+    font-weight: 700;
+}
+
+
+Button:hover{
+    background-color: lightpink;
+}
+
+
+.addNewButton{
+    margin: 10px;
+    padding: 10px 150px 10px 150px;
+    height: 60px;
+    border-radius: 20px;
+    align-items: center;
+}
+
+

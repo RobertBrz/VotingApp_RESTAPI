@@ -14,7 +14,6 @@ candidate =  new Candidate(0,0,"");
 
 constructor(private candidateService: CandidateServiceService,
   private location:Location){
-
 }
 
 goBack():void{
@@ -22,7 +21,7 @@ goBack():void{
 }
 
 postNewCandidate():void{
-
+  this.candidateService.postCandidate(this.candidate).subscribe(p=>console.log(p));
 }
 
 }

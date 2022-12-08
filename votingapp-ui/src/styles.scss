@@ -299,3 +299,20 @@
       visibility: hidden;
     }
   }
+
+
+
+  table{
+    border:1px solid white;
+    padding:5px;
+    width: 100%;
+    background-color: rgba($color: #fcfcfc, $alpha: 0.2);
+    border-radius: 20px;
+    }
+    
+    table  :hover{
+        background: linear-gradient(#e66465, #9198e5);
+        // border:black;
+        // border: 1px;
+    }
+

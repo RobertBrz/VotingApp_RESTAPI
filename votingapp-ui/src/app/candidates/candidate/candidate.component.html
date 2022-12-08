@@ -7,14 +7,17 @@
     <tr *ngFor="let candidate of candidates">
         <td> <span >{{candidate.id}}</span></td>
         <td> <span >{{candidate.name}}</span></td>      
-        <td> <a routerLink="/candidate/detail/{{candidate.id}}"> <button> Edit </button></a></td>
+        <td> <a routerLink="/candidate/detail/{{candidate.id}}"> 
+            <button class="editButton" type="button"> Edit </button></a></td>
     </tr>
 </table>
 
-
-<a routerLink="/addCandidate"> 
-    <button type="button">Add Candidate</button>
- </a> 
+<div class="addNewButton">
+    <a routerLink="/addCandidate"> 
+        <button type="button">Add Candidate</button>
+     </a>
+</div>
+ 
    
  
  

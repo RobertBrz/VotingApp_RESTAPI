@@ -50,11 +50,10 @@ namespace VotingApp.Voters.Application
         }
 
         [HttpPost]
-        [Route("Vote/{voterid}")]
+        [Route("Vote")]
         public IActionResult Vote([FromBody] VoteDto voteDto)
         {
-            _voterService.Vote(voteDto);
-            return Ok();
+            return Ok(_voterService.Vote(voteDto));
         }
 
         [HttpPut]

@@ -3,6 +3,7 @@ import {HttpClient, HttpClientModule, HttpParams ,HttpErrorResponse}from '@angul
 import { catchError, EMPTY, map, observable, Observable, throwError } from 'rxjs';
 import { IVoter, Voter } from '../models/voter';
 import { MessageService } from './message.service';
+import { Vote } from '../models/vote';
 
 
 @Injectable({
@@ -40,6 +41,10 @@ baseUrl= 'https://localhost:5001/Voter/';
     // .pipe(
     //   catchError(this.handleError('addHero', hero))
     this.messageService.addMessage("sent ");
+  }
+
+  vote(vote:Vote):Observable<Vote>{
+    return this.http.post<Vote>(this.baseUrl+'Vote', vote);
   }
 
 

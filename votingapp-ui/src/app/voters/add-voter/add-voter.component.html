@@ -1,13 +1,17 @@
-<p>Add New Voter</p>
+<div class="add">
+    <h2>Add New Voter</h2>
 
-<div class="form-group">
-    <label for="name"> Name </label>
-    <input type="text" class="form-control" id="name"  [(ngModel)]="voter.name" name="name">
-    <label for="pesel">Pesel</label>
-    <input type="number" class="form-control" id="pesel"  [(ngModel)]="voter.pesel" name="pesel">
+    <div class="form-group">
+        <label for="name"> Name </label>
+        <input type="text" class="form-control" id="name"  [(ngModel)]="voter.name" name="name">
+    </div>
+    <div class="form-group">
+        <label for="pesel">Pesel</label>
+        <input type="number" class="form-control" id="pesel"  [(ngModel)]="voter.pesel" name="pesel">
+    </div>
+    <button type="button" (click)="goBack()">go back</button>
+    
+    <a routerLink="/newVoterConfirmation"> 
+    <button type="button" (click)="postNewVoter()"  >Add</button>
+    </a>
 </div>
-<button type="button" (click)="goBack()">go back</button>
-
-<a routerLink="/newVoterConfirmation"> 
-<button type="button" (click)="postNewVoter()"  >Add</button>
-</a>

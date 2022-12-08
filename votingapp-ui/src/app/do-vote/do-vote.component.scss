@@ -1,0 +1,41 @@
+select{
+width: 200px;
+height: 60px;
+border-radius: 10px;
+}
+select option {
+    padding: 5px;
+}
+
+#wrapper{
+    display: flex;
+}
+
+#votersdiv{
+  width: 50%;
+}
+
+
+#candidatesdiv{
+    width: 50%;
+}
+
+Button{
+    cursor: pointer;
+    margin: 20px;
+    padding: 20px;
+    width: 100%;
+    height:100%;
+    max-width: 200px;
+    min-height:  50px;
+    border-radius: 20px;
+    color: black;
+    font-weight: 700;
+}
+
+
+Button:hover{
+    background-color: lightpink;
+    transform: scale(1.1);
+    transition: .3s;
+}

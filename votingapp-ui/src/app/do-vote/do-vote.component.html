@@ -1,0 +1,25 @@
+<div id="wrapper">
+    <div id="votersdiv">
+        <div>
+            <label >Choose a voter</label>
+        </div>
+        <select name="voters" [(ngModel)]="selectedVoter">
+            <option  *ngFor="let voter of votersArray" [ngValue]="voter">{{voter.name}}</option>
+        </select> 
+    </div>
+    <div id="candidatesdiv">
+        <div > 
+            <label>Choose a candidate </label>
+        </div>
+        <select name="candidates" [(ngModel)]="selectedCandidate">
+            <option  *ngFor="let candidate of candidatesArray" [ngValue]="candidate">{{candidate.name}}</option>
+        </select> 
+    </div>
+</div>
+
+<div> 
+<button type="button" (click)="doVote()">Vote</button>
+</div>
+
+
+
