@@ -1,37 +1,43 @@
-<div class="navigation">
-  <nav>
-      <h2 class="logo">Voting<span>App</span></h2>
-      <ul>
-        <li>          <a class="link" routerLink ="/voters">Voters</a>        </li>
-        <li><a class="link" routerLink="/candidates">Candidates</a></li>
-        <li><a class="link" routerLink="/vote">Vote</a></li>
-        <!-- <li><a class="link" routerLink="/lazy">Lazy Loaded Page</a> </li>
-        <li><a class="link" routerLink="/animation">Simple Animation</a></li> -->
-      </ul>
-      <div>
-        <button class="signInButton" type="button">Sing In</button>
-        <button   class="singUpButton" type="button"> Sing Up</button>
-      </div>
-  </nav>
-  <div class="page" >
-    <router-outlet></router-outlet>
+<main>
+  <div class="navigation">
+    <nav>
+        <h2 class="logo">Voting<span>App</span></h2>
+        <ul>
+          <li>          <a class="link" routerLink ="/voters">Voters</a>        </li>
+          <li><a class="link" routerLink="/candidates">Candidates</a></li>
+          <li><a class="link" routerLink="/vote">Vote</a></li>
+          <!-- <li><a class="link" routerLink="/lazy">Lazy Loaded Page</a> </li>
+          <li><a class="link" routerLink="/animation">Simple Animation</a></li> -->
+        </ul>
+        <div>
+          <button class="signInButton" type="button">Sing In</button>
+          <button   class="singUpButton" type="button"> Sing Up</button>
+        </div>
+    </nav>
+    <div class="page" >
+      <router-outlet></router-outlet>
+    </div>
   </div>
-</div>
+  
+  <div class="chat-popup" >
+    <button>Lets talk!</button>
+    <a class="chat-logo">
+    <button type="button">
+      <div class="fb-customerchat" page_id="333581853839424"></div>
+    </button>
+    </a>
+  </div>
+  
+  
+  <script type="text/javascript"     src="https://connect.facebook.net/en_US/sdk/xfbml.customerchat.js"></script>
+  <!-- <script type="text/javascript" src="https://connect.facebook.net/en_US/sdk.js"></script> -->
+  
+  <!-- <footer>
+    <app-message></app-message>
+  </footer> -->
+</main>
+<footer>
+  
+</footer>
 
-<div class="chat-popup" >
-  <button>Lets talk!</button>
-  <a class="chat-logo">
-  <button type="button">
-    <div class="fb-customerchat" page_id="333581853839424"></div>
-  </button>
-  </a>
-</div>
-
-
-<script type="text/javascript"     src="https://connect.facebook.net/en_US/sdk/xfbml.customerchat.js"></script>
-<!-- <script type="text/javascript" src="https://connect.facebook.net/en_US/sdk.js"></script> -->
-
-<!-- <footer>
-  <app-message></app-message>
-</footer> -->
 

@@ -1,0 +1,35 @@
+nav {
+  display: flex;
+  flex-direction: row;
+  flex-wrap:nowrap;
+  align-items: center;
+  justify-content: space-between;
+  padding-left: 10%;
+  padding-right:10%;
+  background-color: #25547D;
+  color :white
+}
+
+nav ul li{
+  list-style-type:none;
+  display:inline-block;
+  padding:10px;
+}
+
+nav ul li{
+  text-decoration: none;
+}
+
+a{
+  text-decoration: none;
+  color:inherit;
+}
+
+a:hover{
+  cursor: pointer;
+}
+
+router-outlet{
+  width: 100%;
+  height: 100%;
+}

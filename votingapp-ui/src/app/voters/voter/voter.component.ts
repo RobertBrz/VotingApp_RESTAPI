@@ -1,4 +1,4 @@
-import { Component  ,OnInit} from '@angular/core';
+import { Component  ,OnInit, OnDestroy} from '@angular/core';
 import { VoterService } from '../../services/voter.service';
 import { IVoter } from '../../models/voter';
 import { FormsModule } from '@angular/forms';
@@ -12,7 +12,7 @@ import {Location} from '@angular/common';
   templateUrl: './voter.component.html',
   styleUrls: ['./voter.component.scss']
 })
-export class VoterComponent implements OnInit {
+export class VoterComponent implements OnInit  , OnDestroy{
 
   voters : IVoter[] = [];
 
@@ -20,6 +20,9 @@ constructor(private voterService:VoterService
   ,private messageService:MessageService,
   private location :  Location){
 }
+  ngOnDestroy(): void {
+    throw new Error('Method not implemented.');
+  }
 
   ngOnInit(): void {
     this.getVoters();
@@ -36,5 +39,4 @@ onSelect(voter :IVoter):void{
 goBack():void{
   this.location.back();
 }
-
 }
